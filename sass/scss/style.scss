@@ -1,0 +1,45 @@
+@use "variables";
+@use "buttons";
+@use "mixins";
+@use "media";
+
+body {
+  font-family: $font-family;
+  background-color: $gray;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  @include xs {
+    background-color: red;
+  };
+  @include xl {
+    background: orange;
+  }
+  width: 500px;
+  height: 300px;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 30px;
+  padding: 2rem;
+  h1 {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $gray;
+    span {
+      color: green;
+      @include xs {
+        color: red;
+      }
+    }
+  }
+  .text {
+    color: #333;
+  }
+  ul {
+    @include inline-list;
+  }
+}

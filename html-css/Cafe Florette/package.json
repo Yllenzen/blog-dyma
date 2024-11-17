@@ -1,0 +1,13 @@
+{
+    "name": "htmlcss-c4-l1",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.html",
+    "scripts": {
+      "start": "parcel index.html --open",
+      "build": "parcel build index.html"
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "keywords": []
+  }

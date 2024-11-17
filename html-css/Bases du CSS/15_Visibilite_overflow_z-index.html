@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visibility display, z-index et overflow</title>
+    <style>
+      .container {
+        background: #eee;
+        height: 500px;
+        width: 500px;
+        position: relative;
+        /* visibility: hidden; */
+        /* display: none; */
+        overflow: auto;
+      }
+      .elem {
+        width: 200px;
+        height: 200px;
+      }
+      .elem-1 {
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        height: 900px;
+        background: teal;
+        z-index: 1;
+      }
+      .elem-2 {
+        position: absolute;
+        bottom: 100px;
+        right: 100px;
+        background: green;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="elem elem-1"></div>
+      <div class="elem elem-2"></div>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat nesciunt
+      cupiditate tempora, maiores rem aliquid amet ducimus esse voluptatum
+      atque?
+    </p>
+  </body>
+</html>

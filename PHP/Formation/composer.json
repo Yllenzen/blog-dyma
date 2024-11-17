@@ -1,0 +1,6 @@
+{
+    "name": "bourl/formation",
+    "require": {
+        "symfony/error-handler": "^7.1"
+    }
+}

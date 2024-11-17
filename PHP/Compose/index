@@ -1,0 +1,27 @@
+// Composer
+
+<?php
+
+spl_autoload_register(function ($className) {
+    require __DIR__ . '/' . str_replace('\\', '/', $className) . '.php';
+});
+
+$db = new \myproject\database\models\User();
+
+?>
+
+// Composer et autoload
+
+<?php
+
+require './vendor/autoload.php';
+
+use Symfony\Component\ErrorHandler\Debug;
+
+Debug::enable();
+
+$var();
+
+?>
+
+// Utiliser l'autoload de Composer pour ses classes

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>L'arrière-plan des éléments</title>
+    <style>
+      /* La couleur de l'arrière plan */
+      h2 {
+        background-color: black;
+        color: white;
+      }
+      /* Utiliser une image */
+      /* Par défaut l'image se répète et couvre toute la surface dsiponible. */
+      /* Si une couleur est utilisée, l'image sera supperposée. */
+      .etoiles {
+        height: 50px;
+        background-color: red;
+        background-image: url("https://mdn.github.io/css-examples/learn/backgrounds-borders/star.png");
+      }
+      /* Contrôle des répétitions */
+      .nerepetepas {
+        background-repeat: no-repeat;
+      }
+      .repetehorizontalement {
+        background-repeat: repeat-x;
+      }
+      /* Il est possible de définir la taille
+        en px, em, rem, % etc */
+      .tailledefinie {
+        background-size: 2.6rem;
+      }
+      .contenir {
+        background-size: contain;
+      }
+      /* Contrôler la position */
+      .milieu {
+        background-position: center center;
+      }
+      /* Raccourci */
+      .raccourci {
+        height: 50px;
+        background: center right 50px / contain red
+          url("https://mdn.github.io/css-examples/learn/backgrounds-borders/star.png")
+          no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Un arrière-plan</h2>
+    <div class="etoiles"></div>
+    <br />
+    <div class="etoiles nerepetepas"></div>
+    <br />
+    <div class="etoiles repetehorizontalement"></div>
+    <br />
+    <div class="etoiles nerepetepas tailledefinie"></div>
+    <br />
+    <div class="etoiles nerepetepas contenir"></div>
+    <br />
+    <div class="etoiles nerepetepas contenir milieu"></div>
+    <br />
+    <div class="raccourci"></div>
+  </body>
+</html>

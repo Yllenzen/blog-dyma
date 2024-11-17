@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox | Exemple de mise en page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      .header {
+        min-height: 50px;
+        background: red;
+      }
+
+      .body {
+        background: green;
+        flex: 1;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: stretch;
+      }
+
+      .sidebar {
+        flex: 0 0 200px;
+        background: orange;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .sidebar span {
+        margin: 0.5rem;
+        background: teal;
+        flex-basis: 50px;
+      }
+
+      .content {
+        background: yellow;
+        display: flex;
+        flex: auto;
+        flex-flow: row wrap;
+        padding: 0.2rem;
+        align-content: flex-start;
+      }
+
+      .content div {
+        background: purple;
+        flex-basis: 200px;
+        height: 200px;
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header"></div>
+      <div class="body">
+        <div class="sidebar">
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+        </div>
+        <div class="content">
+          <div>elem-1</div>
+          <div>elem-2</div>
+          <div>elem-3</div>
+          <div>elem-4</div>
+          <div>elem-5</div>
+          <div>elem-6</div>
+          <div>elem-7</div>
+          <div>elem-8</div>
+          <div>elem-9</div>
+          <div>elem-10</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire</title>
+  </head>
+  <body>
+    <form action="#">
+      <label for="Name">Nom</label>
+      <input name="Name" placeholder="Nom" type="text" id="name" />
+      <br /><br />
+      <label for="Email">Email</label>
+      <input name="Email" type="email" id="email" />
+      <br /><br />
+      <label for="Date">Date</label>
+      <input name="Date" type="date" id="date" />
+      <br /><br />
+      <label for="Password">Password</label>
+      <input name="Password" type="Password" id="Password" />
+      <br /><br />
+      <label for="Description">Description</label>
+      <textarea
+        name="Description"
+        id="Description"
+        cols="20"
+        rows="5"
+      ></textarea>
+      <br /><br />
+      <label for="Genre">Genre</label>
+      <select name="Genre" id="Genre">
+        <option value="Femme">Femme</option>
+        <option value="Homme">Homme</option>
+        <option value="Non binaire">Non binaire</option>
+      </select>
+      <br /><br />
+      <label for="Fruit">Fruit</label><br />
+      <input name="Fruit" type="checkbox" id="fruit" value="Apple" /> Pomme
+      <br />
+      <input name="Fruit" type="checkbox" id="fruit" value="Peach" /> Pêche
+      <br />
+      <br /><br />
+      <label for="Sport">Sport</label> <br />
+      <input name="Sport" type="radio" id="Sport" value="Tennis" /> Tennis
+      <br />
+      <input name="Sport" type="radio" id="Sport" value="Rugby" /> Rugby
+      <br />
+      <br />
+      <!-- <input type="submit" value="Sauvegarde" /> -->
+      <button type="submit">Sauvegarder Bouton</button>
+    </form>
+  </body>
+</html>

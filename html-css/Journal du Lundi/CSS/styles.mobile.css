@@ -1,0 +1,44 @@
+/* header */
+
+header {
+    grid-template-columns: 1fr;
+    place-items: center center;
+    line-height: 2rem;
+}
+
+header a {
+    display: block;
+    padding: 0.5re 0;
+}
+
+header ul {
+    flex-direction: column;
+    place-self: stretch;
+}
+
+header ul li {
+    padding: 0.2rem;
+    align-self: stretch;
+    text-align: center;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+header ul li:last-child {
+    display: none;
+}
+
+header .logo {
+    font-size: 3rem;
+    line-height: 3.2rem;
+    font-family: "Staatliches", cursive;
+}
+
+/* nav */
+
+nav {
+    overflow: hidden;
+}
+
+nav a {
+    padding: 0 1rem;
+}

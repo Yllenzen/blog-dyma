@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"path": "../Bases du HTML"
+		},
+		{
+			"path": "../Bases du CSS"
+		},
+		{
+			"path": "../Cafe Florette"
+		},
+		{
+			"path": "../Responsive"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../Ledor immobilier"
+		},
+		{
+			"path": "../Selector"
+		},
+		{
+			"path": "../Grilles CSS"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Grilles CSS"
+	}
+}

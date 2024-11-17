@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Les pseudo-classes et les curseurs</title>
+    <style>
+      .boite {
+        height: 150px;
+        width: 150px;
+        background: green;
+      }
+      .boite:hover {
+        background: red;
+      }
+      :focus {
+        background: blue;
+      }
+      option:checked {
+        background: red;
+      }
+      .container:focus-within {
+        background: yellow;
+      }
+      input:in-range {
+        background-color: rgba(0, 255, 0, 0.25);
+      }
+      input:out-of-range {
+        background-color: rgba(255, 0, 0, 0.25);
+        border: 2px solid red;
+      }
+      input[type="email"]:invalid {
+        background-color: #ffdddd;
+      }
+      input[type="email"]:valid {
+        background-color: #ddffdd;
+      }
+      a:link {
+        color: pink;
+      }
+      a:visited {
+        color: teal;
+      }
+      .boite2 {
+        display: inline-block;
+        box-sizing: border-box;
+        text-align: center;
+        background: orange;
+        width: 100px;
+        height: 100px;
+        padding-top: 40px;
+      }
+      .wait {
+        cursor: wait;
+      }
+      .zoom-in {
+        cursor: zoom-in;
+      }
+      .grabbing {
+        cursor: grabbing;
+      }
+      .alias {
+        cursor: alias;
+      }
+      .copy {
+        cursor: copy;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Les pseudo-classes</h2>
+    <!-- Passez la souris sur l'élément puis cliquez dessus : -->
+    <div class="boite"></div>
+    <br />
+    <!-- Sélectionnez une option, elle sera rouge dans la liste déroulante : -->
+    <select name="pets" id="pet-select">
+      <option value="">--Sélectionnez une option--</option>
+      <option value="dog">Chien</option>
+      <option value="cat">Chat</option>
+      <option value="hamster">Hamster</option>
+    </select>
+    <br />
+    <br />
+    <!-- Le container deviendra jaune si l'un des champs, qui sont des enfants
+      a le focus : -->
+    <div class="container">
+      <label for="prenom">
+        Prénom :
+        <input id="prenom" placeholder="Prénom" type="text" />
+      </label>
+      <label for="nom">
+        Nom :
+        <input id="nom" placeholder="Nom" type="text" />
+      </label>
+    </div>
+    <br />
+    <!-- Sera rouge si la valeur n'est pas entre 1 et 10 : -->
+    <input type="number" min="1" max="10" value="12" />
+    <br /><br />
+    <!-- Sera en rouge si vide ou si pas d'email -->
+    <input type="email" required />
+    <br /><br />
+    <!-- Un lien rose si il n'a pas été visité sinon bleu canard : -->
+    <a href="https://wikipedia.org" target="_blank" rel="noopener"
+      >Un lien vers Wikipedia</a
+    >
+    <h2>Les curseurs</h2>
+    <!-- Placez votre curseur sur les carrés : -->
+    <div class="boite2 wait">Wait</div>
+    <div class="boite2 zoom-in">Zoom-in</div>
+    <div class="boite2 grabbing">Grabbing</div>
+    <div class="boite2 alias">Alias</div>
+    <div class="boite2 copy">Copy</div>
+  </body>
+</html>

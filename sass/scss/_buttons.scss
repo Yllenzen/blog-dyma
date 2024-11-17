@@ -1,0 +1,29 @@
+%btn {
+  &:hover {
+    opacity: 0.8;
+  }
+  border: 0;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  min-width: 100px;
+  background: #333;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-warning {
+  @extend %btn;
+  background: orange;
+}
+.btn-default {
+  @extend %btn;
+  background: blue;
+}
+.btn-primary {
+  @extend %btn;
+  background: pink;
+}
+.btn-danger {
+  @extend %btn;
+  background: red;
+}

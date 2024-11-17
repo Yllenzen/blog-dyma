@@ -1,0 +1,4273 @@
+<?php
+
+$a = 31;
+$b = "Hello";
+$c = [1, 2, 3];
+
+class Test
+{
+};
+
+$d = new Test;
+
+$e = print_r($d, true);
+
+print_r($e);
+
+//var_dump($d);
+
+#echo $d;
+
+/* $b = print $a; */
+/* print $b; */
+
+//string
+$a = "hello world";
+
+//int
+$b = 1;
+
+//float = double
+$c = 2.5;
+
+//boolean
+$d = true;
+
+//array
+$e = [1, 2, 3];
+
+// objet
+$f = new DateTime();
+
+//Null
+$g = NULL;
+
+echo is_string($a);
+echo "<br/>";
+echo is_string($b);
+echo "<br/>";
+echo gettype($a);
+echo "<br/>";
+echo gettype($b);
+echo "<br/>";
+echo gettype($c);
+echo "<br/>";
+echo gettype($d);
+echo "<br/>";
+echo gettype($e);
+echo "<br/>";
+echo gettype($f);
+echo "<br/>";
+echo gettype($g);
+
+$a = (bool)"test";
+/* $a = (string)true; */
+/* $a = (int)false; */
+/* $a = (int)"5"; */
+/* $a += 1;
+$a += 0.1; */
+
+/* echo $b; */
+var_dump($a);
+
+$a = 1;
+$b = "1";
+
+/* echo (int)$b; */
+
+/* echo $a = $b; */
+/* echo $a == $b; */
+/* echo $b < 2; */
+/* echo $b <= 2; */
+/* echo $b > 2; */
+/* echo $b >= 2; */
+/* echo $a != $b; */
+/* echo $a !== $b; */
+
+$c = "test";
+
+/* echo (bool)$c; */
+
+/* echo !!$c; */
+
+if ("") {
+    echo "hello";
+}
+
+define("MYCONST", "Hello World !");
+
+echo MYCONST;
+
+const A = 1;
+
+echo A;
+
+if (true) {
+    define("myconst", "Hello World !");
+} else {
+}
+
+$condition = [1];
+
+echo (bool)$condition, "<br/>";
+
+if ($condition) {
+    echo "dans le if";
+}
+
+$firstname = "Jean";
+
+if ($firstname) {
+    echo "Bonjour ", $firstname;
+} else {
+    echo "Bonjour !";
+}
+
+$firstname = "Jean";
+
+if ($firstname === "Jean") :
+    echo "Bonjour Jean";
+elseif ($firstname === "Paul") :
+    echo "Bonjour Paul";
+else :
+    echo "Bonjour !";
+endif;
+
+$firstname = "1";
+
+switch ($firstname) {
+    case 1:
+        echo "Jean";
+        break;
+    case "Paul":
+        echo "Paul";
+        break;
+    default :
+        echo "Pas de nom";
+        break;    
+    }
+
+    $firstname = "1";
+
+switch ($firstname) :
+    case 1:
+        echo "Jean";
+        break;
+    case "Paul":
+        echo "Paul";
+        break;
+    default :
+        echo "Pas de nom";
+        break;    
+    endswitch;
+
+    $firstname = "Jean";
+
+$res = match ($firstname) {
+    "Jean" => "Bonjour Jean !",
+    "Paul" => "Bonjour Paul !",
+    default => "Qui êtes-vous ?"
+};
+
+echo $res;
+
+$firstname = "Jean";
+
+echo match ($firstname) {
+    "Jean" => "Bonjour Jean !",
+    "Paul" => "Bonjour Paul !",
+    default => "Qui êtes-vous ?"
+};
+
+$firstname = "Jean";
+
+function test($name) {
+    echo "Bonjour ", $name;
+    return $name;
+}
+
+echo match ($firstname) {
+    "Jean" => test("Jean"),
+    "Paul" => test("Paul"),
+    default => "Qui êtes-vous ?"
+};
+
+$age = 15;
+
+echo match (true) {
+    $age > 10 => "Bienvenue",
+    default => "Rentre chez toi"
+};
+
+$age = 10;
+$isAllowed;
+
+if ($age > 10) {
+    $isAllowed = true;
+} else {
+    $isAllowed = false;
+}
+
+echo $isAllowed;
+
+/* () ? () : () ; */
+
+$age = 10;
+$isAllowed;
+
+$isAllowed = $age > 10 ? true : false;
+
+echo $isAllowed;
+
+$a = null;
+$b = "Hello";
+$c;
+
+if ($a) {
+    $c = $a;
+} elseif ($b) {
+    $c = $b;
+} else {
+    $c = "inconnue";
+}
+
+echo $c;
+
+$a = null;
+$b = "Hello";
+$c;
+
+$c = $a ?? $b ?? "inconnue";
+
+echo $c;
+
+for ($i = 0;$i < 3;$i ++) {
+    echo $i;
+}
+
+echo "end";
+
+$i = 0;
+
+for (;$i < 3;$i ++) {
+    echo $i;
+}
+
+echo "end";
+
+$i = 0;
+
+for (;;$i ++) {
+    if ($i >2) {
+        break;
+    }
+    echo $i;
+}
+
+echo "end";
+
+$i = 0;
+
+for (;;) {
+    if ($i >2) {
+        break;
+    }
+    echo $i;
+    $i ++;
+}
+
+echo "end";
+
+for ($i = 0;$i < 3;$i ++) {
+    if ($i === 1) {
+        continue;
+    }
+    echo $i;
+}
+
+echo "end";
+
+for ($i = 2;$i >= 0;$i --) {
+    echo $i;
+    }
+
+echo "end";
+
+for ($i = 2;$i >= 0;$i --):
+    echo $i;
+endfor;
+
+echo "end";
+
+$i = 0;
+
+while ($i < 10) {
+echo $i;
+$i++;
+}
+
+$i = 0;
+
+do {
+    echo $i;
+    $i++;
+} while ($i < 10);
+
+$i = 0;
+
+while ($i < 10):
+    echo $i;
+    $i++;
+endwhile;
+
+$a = 5;
+echo gettype($a);
+echo "<br/>";
+$b = 0.3;
+echo gettype($b);
+
+
+
+//introduction aux nombres
+$a = 5;
+$c = 0x12;
+$d = 0b11111111;
+
+echo $c;
+echo "<br/>";
+
+echo $d;
+echo "<br/>";
+
+echo gettype($a);
+echo "<br/>";
+echo PHP_INT_MAX;
+echo "<br/>";
+echo PHP_INT_MIN;
+echo "<br/>";
+echo PHP_INT_SIZE;
+echo "<br/>";
+
+$b = 0.3;
+echo gettype($b);
+echo "<br/>";
+echo PHP_FLOAT_MAX;
+echo "<br/>";
+echo PHP_FLOAT_MIN;
+echo "<br/>";
+
+echo 0.1 + 0.2 === 0.3;
+echo "<br/>";
+echo gettype(10000000000000000000000000000000);
+
+// 
+var_dump(0.1 + 0.7 === 0.8); // false
+
+var_dump(2.2204460492502E-17 + 1.0 === 1.0); // true
+
+$x = 8 - 6.4;
+$y = 1.6;
+var_dump($x === $y); // false
+
+//Les opérateurs pour les nombres
+
+$a = 5;
+$b = 2;
+
+echo $a + $b;
+echo "<br/>";
+
+echo $a - $b;
+echo "<br/>";
+
+echo $a / $b;
+echo "<br/>";
+
+echo $a % $b;
+echo "<br/>";
+
+echo $a * $b;
+echo "<br/>";
+
+echo $a ++;
+echo "<br/>";
+
+echo $a;
+echo "<br/>";
+
+echo ++$a;
+echo "<br/>";
+
+echo $a --;
+echo "<br/>";
+
+echo $a;
+echo "<br/>";
+
+echo --$a;
+echo "<br/>";
+
+echo --$a;
+echo "<br/>";
+
+$a += 5;
+echo $a;
+echo "<br/>";
+
+$a /= 5;
+echo $a;
+echo "<br/>";
+
+$a **= 5;
+echo $a;
+echo "<br/>";
+
+// Vérification et formatage des nombres
+
+$a = 5;
+$b = 1.5;
+
+echo is_double($a);
+echo "<br/>";
+
+echo is_double($b);
+echo "<br/>";
+
+echo is_numeric($a);
+echo "<br/>";
+
+echo is_numeric($b);
+echo "<br/>";
+
+$a = 5546464646.5546846;
+
+echo number_format($a, 2, ".", " ");
+echo "<br/>";
+
+// Les fonctions mathématiques
+
+// Arrondir
+echo floor(0.1);
+echo "<br/>";
+
+echo floor(0.6);
+echo "<br/>";
+
+echo ceil(0.1);
+echo "<br/>";
+
+echo ceil(0.9);
+echo "<br/>";
+
+echo round(0.1);
+echo "<br/>";
+
+echo round(0.9);
+echo "<br/>";
+
+// Max / Min 
+
+echo max(5, 11, 44, 23, 51, 123, 2);
+echo "<br/>";
+
+echo min(5, 11, 44, 23, 51, 123, 2);
+echo "<br/>";
+
+echo pow(3, 2);
+echo "<br/>";
+
+// 
+
+echo 3 ** 2;
+echo "<br/>";
+
+echo pi();
+echo "<br/>";
+
+// Nombres aléatoire
+
+echo mt_rand(0, 5);
+echo "<br/>";
+
+echo mt_srand(51);
+echo "<br/>";
+
+echo mt_rand();
+echo "<br/>";
+
+echo mt_rand();
+echo "<br/>";
+
+echo mt_rand();
+echo "<br/>";
+
+// Chaînes de caractères
+
+$a = 'Je suis une 
+châine de caractère d\'échelle';
+
+$b = 1;
+
+$c = 'Je suis une 
+d\' $b
+châine de caractère';
+
+$d = "je suis une ligne\t hello \u{2665} ";
+
+echo $a;
+echo "<br/>";
+echo $b;
+echo "<br/>";
+echo $c;
+echo "<br/>";
+echo $d;
+echo "<br/>";
+echo $a[-1] = "b";
+echo "<br/>";
+
+$e = "
+sqff
+sdfqsdf
+qsfqsdf
+qsfqsdf
+";
+
+$f = <<<Salut
+
+erzerzr
+azerazer
+azerzer
+"dfazf"
+$b
+
+Salut;
+
+echo $e;
+echo "<br/>";
+echo $f;
+echo "<br/>";
+
+$g = <<<'Salut'
+
+bonjour
+salut
+au revoir
+'hi'
+$b
+
+Salut;
+
+echo $g;
+echo "<br/>";
+
+// Opérateur chaîne de caractères
+
+$a = "Je suis une 
+châine de";
+$b = "caractères";
+
+
+echo $a . " " . $b;
+echo "<br/>";
+echo "$a $b";
+echo "<br/>";
+
+$a = 1;
+$b = 2;
+
+
+echo "J'ai mangé " . $a + $b . " pommes";
+echo "<br/>";
+
+$a = 1;
+$b = 2;
+
+
+$c = "J'ai mangé " . $a + $b;
+$c .= " pommes";
+
+echo $c;
+
+// module mbstring
+
+echo mb_strlen("salut");
+echo "<br/>";
+echo mb_strlen("été");
+echo "<br/>";
+
+//
+$a = "Il fait beau en été";
+
+//mb_strlen()
+echo mb_strlen($a);
+echo "<br/>";
+
+//mb_strtolower()
+echo mb_strtolower($a);
+echo "<br/>";
+
+// mb_strtoupper()
+echo mb_strtoupper($a);
+echo "<br/>";
+
+// trim()
+echo "        $a           ";
+echo trim("        $a           ");
+echo "<br/>";
+
+// str_contains()
+echo str_contains($a, "été");
+echo "<br/>";
+
+// str_ends_with()
+echo str_ends_with($a, "été");
+echo "<br/>";
+
+// str_starts_with()
+echo str_starts_with($a, "Il");
+echo "<br/>";
+
+// mb_substr()
+echo mb_substr($a, 0, 7);
+echo "<br/>";
+
+// str_replace()
+echo str_replace("été", "hiver", $a);
+echo "<br/>";
+
+// explode()
+echo print_r(explode(" ", $a));
+echo "<br/>";
+
+// implode()
+echo implode("", explode(" ", $a));
+echo "<br/>";
+
+//Les expressions rationnelles
+$a = "Je suis        2 pomme";
+$pattern = "/m/";
+
+//preg_match_all()
+echo preg_match_all($pattern ,$a);
+
+/* $pattern = "/s/i"; */
+
+//preg_match()
+echo preg_match($pattern ,$a);
+
+/* $pattern = "/ \d /"; */
+/* $pattern = "/sa+/"; */
+/* $pattern = "/s[a]+s/"; */
+/* $pattern = "/s[ui]*s/"; */
+/* $pattern = "/s[1-4]/"; */
+/* $pattern = "/s[ui]/"; */
+/* $pattern = "/\s\d/"; */
+/* $pattern = "/^Je/"; */
+/* $pattern = "/pomme$/"; */
+/* $pattern = "/Je$/i"; */
+/* $pattern = "/je/i"; */
+
+//preg_replace()
+echo preg_replace($pattern , "x",$a);
+
+/* echo preg_replace($pattern , "3 ",$a); */
+/* $pattern = "/m/"; */
+/* echo preg_replace($pattern , "x",$a, 1); */
+/* echo preg_replace($pattern , "x",$a); */
+
+/// Les fonctions
+
+function func() {
+    echo "Hello World !";
+}
+
+func();
+
+function func() {
+    echo "Hello World !";
+    return 1;
+}
+
+$b = func();
+
+echo $b;
+
+function bar() 
+{
+    echo "Bar";
+}
+
+function func() 
+{
+    bar();
+    echo "Hello World !";
+}
+
+$b = func();
+
+echo $b;
+
+function func() 
+{
+    function bar() 
+    {
+    echo "Bar";
+    }
+    bar();
+    echo "Hello World !";
+}
+
+$b = func();
+
+echo $b;
+
+$d = 1;
+$e = 1;
+
+function func($a, $b) 
+{
+    return $a + $b;
+}
+
+$c = func($d, $e);
+
+echo $c;
+
+$d = 1;
+$e = 1;
+
+function func($a, $b) 
+{
+    $a =3;
+    echo $a;
+}
+
+$c = func($d, $e);
+
+echo $d;
+
+$c = 2;
+
+function greeting($firstname, $lastname) 
+{
+    echo "Bonjour $firstname $lastname";
+}
+
+greeting ("Nelly", "BOURLIAUD");
+
+function greeting($firstname, $lastname) 
+{
+    echo "Bonjour $firstname $lastname";
+}
+
+greeting (lastname: "BOURLIAUD", firstname: "Nelly");
+
+function greeting($firstname, $lastname) 
+{
+    echo "Bonjour $firstname $lastname";
+}
+
+greeting (lastname: "BOURLIAUD", firstname: "Nelly");
+
+//Les Nombres indéfini d'arguments
+
+<?php
+
+echo max(1, 454, 23, 52);
+
+<?php
+
+function my_min(){
+    $a = func_get_args();
+    print_r($a);
+    /* return min(); */
+}
+
+my_min(1, 2, 3);
+
+<?php
+
+function my_min()
+{
+    $a = func_get_args();
+    $firtstArg = func_get_arg(0);
+    echo $firtstArg;
+    /* print_r($a); */
+    /* return min(); */
+}
+
+my_min(1, 2, 3);
+
+<?php
+
+function my_min()
+{
+    $a = func_get_args();
+    $firtstArg = func_get_arg(0);
+    $num = func_num_args();
+    echo $num;
+/*     echo $firtstArg; */
+    /* print_r($a); */
+    /* return min(); */
+}
+
+my_min(1, 2, 3);
+
+<?php
+
+function my_min(...$arr)
+{
+    print_r($arr);
+}
+
+my_min(1, 2, 3, 4, 5);
+
+<?php
+
+function my_min($a, ...$arr)
+{
+    echo $a;
+    print_r($arr);
+}
+
+my_min(1, 2, 3, 4, 5);
+
+<?php
+
+function my_min($a, $b, ...$arr)
+{
+    echo $a;
+    print_r($arr);
+    /* echo $firtstArg; */
+    /* print_r($a); */
+    /* return min(); */
+}
+
+my_min(1, 2, 3, 4, 5);
+
+<?php
+
+function my_min($a, $b, ...$arr)
+{
+    return min(...$arr);
+}
+
+echo my_min(1, 2, 3, 4, 5);
+
+//Portée des variables
+
+<?php
+
+$b = 2;
+
+function func()
+{
+    global $b;
+    $b = 3;
+    echo $b;
+    $a = 1;
+}
+
+func();
+
+echo $b;
+
+<?php
+
+$b = 2;
+
+function func()
+{
+    echo $GLOBALS ["b"];
+}
+
+func();
+
+echo $b;
+
+<?php
+
+$b = 2;
+
+function func()
+{
+    $num = 0;
+    echo $num;
+    $num++;
+}
+
+func();
+func();
+func();
+func();
+func();
+
+<?php
+
+$b = 2;
+
+function func()
+{
+    static $num = 0;
+    echo $num;
+    $num++;
+}
+
+func();
+func();
+func();
+func();
+func();
+
+//Les fonctions anonymes
+
+<?php
+
+function func($callback)
+{
+    $callback();
+}
+
+func(function (){
+    echo "in callback";
+});
+
+<?php
+
+function func($callback)
+{
+    $callback(1, 2);
+}
+
+func(function ($a, $b){
+    echo $a + $b;
+});
+
+<?php
+
+$mycallback = function($a, $b){
+    echo $a + $b;
+};
+
+function func($callback)
+{
+    $callback(1, 2);
+}
+
+func($mycallback);
+
+<?php
+
+function test($a, $b){
+    echo $a + $b;
+};
+
+$mycb = "test";
+
+function func($callback)
+{
+    $callback(1, 2);
+}
+
+func($mycb);
+
+<?php
+
+$a = 50;
+
+function func($callback)
+{
+    $callback(1, 2);
+}
+
+func(function ($b)
+{
+    global $a;
+    echo $b + $a;
+});
+
+<?php
+
+$a = 50;
+
+function func($callback)
+{
+    $callback(1, 2);
+}
+
+func(function ($b) use ($a)
+{
+    echo $b + $a;
+});
+
+//Les fonctions fléchées
+
+<?php
+
+$p1 = 5;
+$p2 = 7;
+
+function calculator($p1, $p2, $operator){
+    return $operator($p1, $p2);
+}
+
+echo calculator($p1, $p2 ,function ($p1, $p2){
+    return $p1 + $p2;
+});
+
+<?php
+
+$p1 = 5;
+$p2 = 7;
+
+function calculator($p1, $p2, $operator){
+    return $operator($p1, $p2);
+}
+
+$addition = function ($p1, $p2){
+    return $p1 + $p2;
+};
+
+echo calculator($p1, $p2, $addition);
+
+<?php
+
+$p1 = 5;
+$p2 = 7;
+
+function calculator($p1, $p2, $operator)
+{
+    return $operator($p1, $p2);
+}
+
+$addition = fn ($p1, $p2) => $p1 + $p2;
+
+echo calculator($p1, $p2, $addition);
+
+<?php
+
+$p1 = 5;
+$p2 = 7;
+$p3 = 50;
+
+function calculator($p1, $p2, $operator)
+{
+    return $operator($p1, $p2);
+}
+
+/* $addition = fn ($p1, $p2) => $p1 + $p2 + $p3; */
+$addition = function ($p1, $p2) use ($p3){
+    return $p1 + $p2 + $p3;
+};
+
+echo calculator($p1, $p2, $addition);
+
+<?php
+
+declare(strict_types=1);
+
+//int
+//float
+//string
+//bool
+//array
+//mixed
+
+function add(int | float $p1, int | float $p2): int | float
+{
+    return $p1 + $p2;
+}
+
+echo add(1.5, 2);
+
+function greeting(string $name): void 
+{
+    echo $name;
+}
+
+<?php
+
+declare(strict_types=1);
+
+//int
+//float
+//string
+//bool
+//array
+//mixed
+
+function add(int | float $p1, int | float $p2): mixed
+{
+    return $p1 + $p2;
+}
+
+echo add(1.5, 2);
+
+function greeting(string $name): void 
+{
+    echo $name;
+}
+
+//Introduction aux tableaux
+
+<?php
+
+$a = [1, "test", true];
+$b = ['test' => 'foo', 'bar' => 'hello'];
+
+echo "<pre>";
+
+print_r($a);
+print_r($b);
+
+echo "<pre>";
+
+<?php
+
+$a = [1, "test", true];
+$b = ['123' => 'foo', 'bar' => 'hello'];
+
+echo "<pre>";
+
+/* print_r($a); */
+print_r($b);
+var_dump($b);
+
+echo "<pre>";
+
+<?php
+
+$a = [1, "test", true];
+$b = [true => 'foo', 'bar' => 'hello'];
+
+echo "<pre>";
+
+/* print_r($a); */
+print_r($b);
+var_dump($b);
+
+echo "<pre>";
+
+<?php
+
+$a = [1, "test", true];
+$b = [null => 'foo', 'bar' => 'hello'];
+
+echo "<pre>";
+
+/* print_r($a); */
+print_r($b);
+var_dump($b);
+
+echo "<pre>";
+
+<?php
+
+$a = [1, "test", true];
+$b = [1.5 => 'foo', 'bar' => 'hello'];
+
+echo "<pre>";
+
+/* print_r($a); */
+print_r($b);
+var_dump($b);
+
+echo "<pre>";
+
+<?php
+
+$a = [0 => 0, 1 => 1, 0 => 2];
+
+echo "<pre>";
+
+var_dump($a);
+
+echo "<pre>";
+
+<?php
+
+$a = [[1, 2], 3];
+
+echo "<pre>";
+
+var_dump($a);
+
+echo "<pre>";
+
+//Accéder aux valeurs d'un tableau
+
+<?php
+
+$a = [1, 2];
+$b = ["foo" => "bar", 1];
+
+echo "<pre>";
+
+/* echo $a[0]; */
+var_dump($b["foo"]);
+
+echo "<pre>";
+
+<?php
+
+$a = [1, 2];
+$b = ["foo" => "bar", 1];
+
+echo "<pre>";
+
+/* echo $a[0]; */
+var_dump($b[0]);
+
+echo "<pre>";
+
+<?php
+
+$a = [1, 2];
+$b = ["foo" => "bar", 1, 'hello' => 'world', 'trois'];
+
+echo "<pre>";
+
+/* echo $a[0]; */
+var_dump($b[1]);
+
+echo "<pre>";
+
+<?php
+
+$a = [1, 2];
+$b = ["foo" => "bar", 1, 'hello' => 'world', 'trois'];
+
+echo "<pre>";
+
+/* echo $a[0]; */
+/* var_dump($b[1]); */
+echo count($b);
+echo count($a);
+
+echo "<pre>";
+
+//Les opérateurs pour les tableaux
+
+    //addition
+
+<?php
+
+$a = [1, 2, 3];
+$b = [4, 5, 6];
+
+echo "<pre>";
+
+print_r($a + $b);
+
+echo "<pre>";
+
+<?php
+
+$a = [1, 2];
+$b = [4, 5, 6];
+
+echo "<pre>";
+
+print_r($a + $b);
+
+echo "<pre>";
+
+<?php
+
+$a = ['a' => 1, 'b' => 2];
+$b = ['a' => 4, 5, 'c' => 6];
+
+echo "<pre>";
+
+print_r($a + $b);
+
+echo "<pre>";
+
+    //comparaison
+
+$a = [1, 2];
+$b = [1, 2];
+
+echo "<pre>";
+
+echo $a == $b;
+echo $a === $b;
+
+echo "<pre>";
+
+$a = [1, 2]; //0 => 1, 1 => 2
+$b = [2, 1]; //0 => 2, 1 => 1
+
+echo "<pre>";
+
+echo $a == $b;
+echo $a === $b;
+
+echo "<pre>";
+
+<?php
+
+$a = ['a' => 1, 2];
+$b = [2, 'a' => 1];
+
+echo "<pre>";
+
+echo $a == $b;
+echo $a === $b;
+
+echo "<pre>";
+
+<?php
+
+$a = ['a' => 1, "2"];
+$b = [2, 'a' => 1];
+
+echo "<pre>";
+
+echo $a == $b;
+echo $a === $b;
+
+echo "<pre>";
+
+    // différences
+
+<?php
+
+/* $a = [1, 2]; */
+/* $b = [1, 2]; */
+
+$a = ['a' => 1, 2];
+$b = [2, 'a' => 1];
+
+echo "<pre>";
+
+echo $a != $b;
+echo $a !== $b;
+
+echo "<pre>";
+
+<?php
+
+/* $a = [1, 2]; */
+/* $b = [1, 2]; */
+
+$a = ['a' => 1, "2"];
+$b = [2, 'a' => 1];
+
+echo "<pre>";
+
+var_dump($a != $b);
+echo $a !== $b;
+
+echo "<pre>";
+
+        //spread
+
+<?php
+
+$a = [1];
+$b = [2, 3];
+
+echo "<pre>";
+
+print_r([...$a, ...$b]);
+
+
+echo "<pre>";
+
+<?php
+
+$a = [1];
+$b = [2, 3, 4, 5, 6];
+
+echo "<pre>";
+
+/* print_r([...$a, ...$b]); */
+
+function test($a, $b, ...$rest) {
+    return $rest;
+}
+
+print_r(test(...$b));
+
+echo "<pre>";
+
+//Référence et valeur
+
+    // valeur
+
+<?php
+
+echo "<pre>";
+
+$firstname = "Nelly";
+$foo = $firstname;
+
+echo $firstname;
+echo "<br />";
+echo $foo;
+echo "<br />";
+
+$firstname = "Jean";
+
+echo $firstname;
+echo "<br />";
+echo $foo;
+
+echo "<pre>";
+
+
+    // référence
+
+<?php
+
+echo "<pre>";
+
+$firstname = "Nelly";
+$foo = &$firstname;
+
+echo $firstname;
+echo "<br />";
+echo $foo;
+echo "<br />";
+
+$firstname = "Jean";
+
+echo $firstname;
+echo "<br />";
+echo $foo;
+echo "<br />";
+
+echo "<pre>";
+
+<?php
+
+echo "<pre>";
+
+$firstname = "Nelly";
+$foo = &$firstname;
+
+echo $firstname;
+echo "<br />";
+echo $foo;
+echo "<br />";
+
+$firstname = "Jean";
+
+echo $firstname;
+echo "<br />";
+echo $foo;
+echo "<br />";
+
+$foo = "bar";
+
+echo $foo;
+echo "<br />";
+
+$foo[0] = "M";
+
+echo $firstname;
+echo "<br />";
+
+$c = [1, 2, 3];
+
+/* function func(array $arr): void {
+    $arr[0] = 33;
+} */
+function func(array &$arr): void {
+    $arr[0] = 33;
+}
+
+func($c);
+
+print_r($c);
+
+echo "<pre>";
+
+//Ajouter des éléments à un tableau et fusionner des tableaux
+
+<?php
+
+echo "<pre>";
+
+$arr = [1];
+$arr[] = 2;
+
+print_r($arr);
+
+$arr = [...$arr, 3];
+print_r($arr);
+
+array_push($arr, 4, 5);
+print_r($arr);
+
+array_unshift($arr, 0);
+print_r($arr);
+
+$arr = [-1, ...$arr];
+print_r($arr);
+
+$arr2 = ['a', 'b', 'c'];
+$arr3 = array_merge($arr, $arr2);
+print_r($arr3);
+
+$arr4 = ['a' => 'a', 'b' => 'b', 'c' => 'c'];
+$arr5 = array_merge($arr, $arr4);
+print_r($arr5);
+
+$arr = array_fill(0, 50, 0);
+print_r($arr);
+
+echo "<pre>";
+
+//Supprimer des éléments à un tableau et fusionner des tableaux
+
+<?php
+
+echo "<pre>";
+
+$arr = [1, 2];
+print_r($arr);
+
+unset($arr[0]);
+print_r($arr);
+
+$arr = ['foo' => 'bar', 'bar' => 'foo'];
+unset($arr['foo']);
+print_r($arr);
+
+unset($arr);
+print_r($arr);
+
+$arr = [1, 2, 3];
+
+$a = array_pop($arr);
+print_r($arr);
+echo "$a\n";
+
+$arr = [1, 2, 3, 4, 5];
+list($a,, $b) = $arr;
+print_r($arr);
+echo "$a\n";
+echo "$b\n";
+
+$arr = [1, 2, 3];
+$a = array_shift($arr);
+print_r($arr);
+echo "$a\n";
+
+$arr = [1, 2, 3];
+/* array_splice($arr, 1, 1); */
+array_splice($arr, 2, 1, 5);
+print_r($arr);
+
+
+echo "<pre>";
+
+//Rechercher des éléments à un tableau et fusionner des tableaux
+
+<?php
+
+echo "<pre>";
+
+$arr = [1, 2, 3];
+$res = array_search(2, $arr);
+print_r($arr);
+echo $res;
+echo "<br />";
+
+$arr = [1, "2", 3];
+$res = array_search(2, $arr, true);
+print_r($arr);
+echo $res;
+echo "<br />";
+
+$arr = ['foo' => 'bar', 'hello' => 'World'];
+$res = array_search('World', $arr, true);
+print_r($arr);
+echo $res;
+echo "<br />";
+
+$arr = [
+    [
+        'name' => 'Nelly',
+        'age' => 12
+    ],
+    [
+        'name' => 'Jules',
+        'age' => 13
+    ]
+];
+$res = array_column($arr, 'name', 'age');
+print_r($arr);
+print_r($res);
+echo "<br />";
+
+$arr = [
+    [
+        'name' => 'Nelly',
+        'age' => 12
+    ],
+    [
+        'name' => 'Jules',
+        'age' => 13
+    ]
+];
+$res = array_search('Nelly', $arr);
+var_dump($res);
+echo "<br />";
+
+$arr = [
+    [
+        'name' => 'Nelly',
+        'age' => 12
+    ],
+    [
+        'name' => 'Jules',
+        'age' => 13
+    ]
+];
+$res = array_search('Nelly', array_column($arr, 'name'));
+var_dump($res);
+echo "<br />";
+
+$arr = [1, 2, 3, 4];
+$arr2 = array_slice($arr, 0, 2);
+print_r($arr);
+print_r($arr2);
+echo "<br />";
+
+$arr = [1, 2, 3, 4];
+$arr2 = array_slice($arr, 1, 2);
+print_r($arr);
+print_r($arr2);
+echo "<br />";
+
+$arr = [1, 2, 3, 4];
+$arr2 = array_slice($arr, 1, 2, true);
+print_r($arr);
+print_r($arr2);
+echo "<br />";
+
+echo "<pre>";
+
+//Trier des tableaux par valeur
+
+<?php
+
+echo "<pre>";
+
+$a = [22, 1, 33, 234, 12, 45];
+$b = ['test', 'Test', 'Aa', 'B', 'b', 'foo', 'Foo'];
+$c = ['a' => 'b', 'foo' => 'bar', 'Hello' => 'world', 'Cioa'=> 'Hello'];
+
+//tri par valeur et non preservation des keys
+sort($a);
+sort($b);
+sort($c);
+
+print_r($a);
+print_r($b);
+print_r($c);
+echo "<br />";
+
+//tri par valeur et preservation des keys
+$d = [22, 1, 33, 234, 12, 45];
+$e = ['test', 'Test', 'Aa', 'B', 'b', 'foo', 'Foo'];
+$f = ['a' => 'b', 'foo' => 'bar', 'Hello' => 'world', 'Cioa'=> 'Hello'];
+
+asort($d);
+asort($e);
+asort($f);
+
+print_r($d);
+print_r($e);
+print_r($f);
+echo "<br />";
+
+//tri inversé par valeur et non preservation des keys
+$g = [22, 1, 33, 234, 12, 45];
+$h = ['test', 'Test', 'Aa', 'B', 'b', 'foo', 'Foo'];
+$i = ['a' => 'b', 'foo' => 'bar', 'Hello' => 'world', 'Cioa'=> 'Hello'];
+
+rsort($g);
+rsort($h);
+rsort($i);
+
+print_r($g);
+print_r($h);
+print_r($i);
+echo "<br />";
+
+//tri inversé par valeur et preservation des keys
+$j = [22, 1, 33, 234, 12, 45];
+$k = ['test', 'Test', 'Aa', 'B', 'b', 'foo', 'Foo'];
+$l = ['a' => 'b', 'foo' => 'bar', 'Hello' => 'world', 'Cioa'=> 'Hello'];
+
+arsort($j);
+arsort($k);
+arsort($l);
+
+print_r($j);
+print_r($k);
+print_r($l);
+echo "<br />";
+
+//tri par valeur user defined fonction et non preservation des keys
+$m = [22, 1, 33, 234, 12, 45];
+$n = ['test', 'Test', 'Aa', 'B', 'b', 'foo', 'Foo'];
+$o = ['a' => 'b', 'foo' => 'bar', 'Hello' => 'world', 'Cioa'=> 'Hello'];
+
+/* usort($m, function ($val1, $val2){
+    return $val2 - $val1;
+}); */
+usort($m, fn ($val1, $val2) => $val2 - $val1);
+/* usort($n, fn ($val1, $val2) => strcmp($val1, $val2)); */
+usort($n, fn ($val1, $val2) => strcasecmp($val1, $val2));
+/* usort($o, fn ($val1, $val2) => strcasecmp($val1, $val2)); */
+uasort($o, fn ($val1, $val2) => strcasecmp($val1, $val2));
+
+print_r($m);
+print_r($n);
+print_r($o);
+echo "<br />";
+
+usort($b, 'strcasecmp');
+print_r($b);
+echo "<br />";
+
+//tri par valeur user defined fonction et preservation des keys
+$coll = collator_create('fr_FR');
+$tableau = ["é" => "été", "a" => "abribus", "c" => "chaud", "f" => "froid", "B" => "Bar"];
+echo "<pre>";
+uasort($tableau, fn ($a, $b) => collator_compare($coll, $a, $b));
+print_r($tableau);
+
+echo "<pre>";
+
+
+//Trier des tableaux par clé et autres fonctions de tri
+
+<?php
+
+echo "<pre>";
+
+/* $b = ['test', 'Test', 'Aa', 'B', 'b', 'foo', 'Foo']; */
+$c = ['a' => 'b', 'foo' => 'bar', 'Hello' => 'world', 'Cioa'=> 'Hello'];
+
+//tri par key
+ksort($c);
+print_r($c);
+echo "<br />";
+
+krsort($c);
+print_r($c);
+echo "<br />";
+
+uksort($c, 'strcasecmp');
+print_r($c);
+echo "<br />";
+
+//tri par key
+$d = ['img1.png', 'Img11.png', 'img2.png'];
+
+sort($d);
+print_r($d);
+echo "<br />";
+
+natsort($d);
+print_r($d);
+echo "<br />";
+
+natcasesort($d);
+print_r($d);
+echo "<br />";
+
+//
+$a = [22, 1, 33, 234, 12, 45];
+
+sort($a);
+print_r($a);
+echo "<br />";
+
+shuffle($a);
+print_r($a);
+echo "<br />";
+
+$ra = array_reverse($a);
+print_r($ra);
+echo "<br />";
+
+
+echo "<pre>";
+
+//Parcourir un tableau
+
+<?php
+
+echo "<pre>";
+
+$arr = [1, 2, 3];
+$arr2 = ['a' => 'A', 'b' => 'B'];
+$arr3 = [[1, 2], [3, 4]];
+
+foreach ($arr as $key => $value){
+    echo "key : $key\n";
+    echo "value : $value\n";
+};
+echo "<br />";
+
+foreach ($arr2 as $key => $value){
+    echo "key : $key\n";
+    echo "value : $value\n";
+};
+echo "<br />";
+
+foreach ($arr as &$value){
+    $value++;
+};
+print_r($arr);
+echo "<br />";
+
+foreach ($arr as list($a, $b)){
+    echo "$a\n";
+    echo "$b\n";
+};
+print_r($arr3);
+echo "<br />";
+
+echo "<pre>";
+
+//Comparer des tableaux
+
+<?php
+
+echo "<pre>";
+
+$a = [1, 2, 3];
+$b = [4, 5, 6];
+
+$c = array_diff($a, $b);
+
+print_r($c);
+echo "<br />";
+
+$d = [4, 2, 6];
+$e = [4, 5, 6];
+
+$f = array_diff($d, $e);
+
+print_r($f);
+echo "<br />";
+
+$g = [4, 2, 6];
+$h = [4, 5, 6];
+
+$i = array_intersect($g, $h);
+
+print_r($i);
+echo "<br />";
+
+echo "<pre>";
+
+
+//Tableau et programmation fonctionnelle
+
+<?php
+
+echo "<pre>";
+
+$arr = [1, 2, 3];
+
+$arr2 = array_map(function($a){
+    return $a + 1;
+}, $arr);
+
+print_r($arr);
+print_r($arr2);
+echo "<br />";
+
+$arr = [1, 2, 3];
+
+$arr2 = array_map(function($a){
+    return $a++;
+}, $arr);
+
+print_r($arr);
+print_r($arr2);
+echo "<br />";
+
+$arr = [1, 2, 3];
+
+$arr2 = array_map(fn ($a) => ++$a, $arr);
+
+print_r($arr);
+print_r($arr2);
+echo "<br />";
+
+$arr = [1, 2, 3];
+$arr1 = ['a', 'b', 'c'];
+
+$arr2 = array_map(function($a, $b){
+    echo "$a\n";
+    echo "$b\n";
+    return 1;
+}, $arr, $arr1);
+
+print_r($arr);
+print_r($arr2);
+echo "<br />";
+
+$arr = [1, 2, 3];
+$arr1 = ['a', 'b', 'c'];
+
+$arr2 = array_map(fn ($a) => strtoupper($a), $arr1);
+
+print_r($arr2);
+echo "<br />";
+
+$arr = ['a', 'b', 'c'];
+$arr1 = [1, 2, 3];
+$arr2 = array_filter($arr, fn ($a) => $a !== 'b');
+
+print_r($arr2);
+echo "<br />";
+
+$arr = [5, 7, 15];
+$arr2 = array_filter($arr, fn ($a) => $a > 5);
+
+print_r($arr2);
+echo "<br />";
+
+$panier = [
+    [
+        'prix' => 50,
+        'title' => "chaussure"
+    ],
+    [
+        'prix' => 70,
+        'title' => "chausettes"
+    ],
+    [
+        'prix' => 30000,
+        'title' => "DS3"
+    ],
+];
+
+$count = array_reduce($panier, function ($acc, $article) {
+    $acc += $article['prix'];
+    return $acc;
+}, 0);
+
+echo $count;
+
+
+echo "<pre>";
+
+// Autres fonctions des tableaux
+
+<?php
+
+echo "<pre>";
+
+$arr = ['orange', 'blue', 'yellow'];
+
+$value = array_rand($arr);
+
+echo $arr[$value];
+echo "<br />";
+
+$arr = ['orange', 'blue', 'yellow'];
+
+$value = array_rand($arr);
+
+print_r($value);
+echo "<br />";
+
+$arr = ['orange', 'blue', 'yellow'];
+
+$value = array_rand($arr, 2);
+
+print_r(array_map(fn ($a) => $arr[$a], $value));
+echo "<br />";
+
+$arr = ['test', 'test', 1, 2, 3, 3];
+
+$res = array_unique($arr);
+print_r($res);
+echo "<br />";
+
+$users = [
+    '19323323' => [
+        'name' => 'Jean'],
+    '43873941' => [
+        'name' => 'Julie'
+    ]
+];
+
+$ids = array_keys($users);
+print_r($ids);
+echo "<br />";
+
+$values = array_values($users);
+print_r($values);
+
+echo "<pre>";
+
+// Introduction aux imports de fichier
+
+<?php
+
+echo __DIR__;
+echo "<br />";
+echo __FILE__;
+echo "<br />";
+
+function test(){
+    echo __FUNCTION__;
+}
+
+test();
+echo "<br />";
+
+echo __LINE__;
+echo "<br />";
+
+
+// Require et chemins
+
+<?php
+
+set_include_path('./shared' . PATH_SEPARATOR . './app');
+
+/* require '/Users/nelly/Documents/Dyma/PHP/lib.php'; */
+/* require  __DIR__ . '/lib.php'; */
+/* require './lib.php'; */
+/* require '../lib.php'; */
+require 'lib.php';
+require 'app.php';
+
+
+func();
+echo $a;
+echo $b;
+
+
+//Portée des inclusions
+
+<?php
+
+set_include_path('./shared' . PATH_SEPARATOR . './app');
+
+$a = 'a';
+echo $a;
+echo "<br />";
+
+
+require 'lib.php';
+
+/* func(); */
+echo $a;
+echo "<br />";
+
+<?php
+
+set_include_path('./shared' . PATH_SEPARATOR . './app');
+
+$a = 'a';
+echo "<br />";
+
+function foo(){
+    require 'lib.php';
+    echo $a;
+}
+
+
+foo();
+echo "<br />";
+echo $a;
+echo "<br />";
+
+<?php
+
+set_include_path('./shared' . PATH_SEPARATOR . './app');
+
+echo require 'lib.php';
+
+//Différences entre require, require_once, include, include_once
+
+<?php
+
+require_once './lib.php';
+require_once './lib2.php';
+
+<?php
+
+include 'test.php';
+include_once 'test.php';
+
+echo 'salut';
+
+<?php
+
+//Lire les requêtes en PHP
+
+echo "<pre>";
+
+print_r($_SERVER);
+
+echo "<pre>";
+
+//Lire et modifier les headers ajoutés par PHP
+
+<?php
+
+echo "<pre>";
+
+/* header('content-type: text/html'); */
+/* header('content-type: text/plain', false); */
+/* header('content-type: text/plain', true, 500); */
+/* header('content-type: text/plain', true, 404); */
+
+header_remove('X-Powered-By');
+
+print_r (headers_list());
+
+echo "<pre>";
+
+// Formulaire
+
+<pre>
+<?php
+
+print_r($_GET);
+
+?>
+</pre>
+<form action="index.php" method="GET">
+    <div>
+        <label for="firstname">Prénom</label><br>
+        <input type="text" name="firstname" id="firstname">
+    </div>
+    <div>
+        <label for="lastname">Nom</label><br>
+        <input type="text" name="lastname" id="lastname">
+    </div>
+    <br>
+    <button type="summit">Soumettre</button>
+</form>
+
+<pre>
+<?php
+
+print_r($_POST);
+
+?>
+</pre>
+<form action="index.php" method="POST">
+    <div>
+        <label for="firstname">Prénom</label><br>
+        <input type="text" name="firstname" id="firstname">
+    </div>
+    <div>
+        <label for="lastname">Nom</label><br>
+        <input type="text" name="lastname" id="lastname">
+    </div>
+    <br>
+    <button type="summit">Soumettre</button>
+</form>
+
+<pre>
+<?php
+
+print_r($_REQUEST);
+
+?>
+</pre>
+<form action="index.php" method="POST">
+    <div>
+        <label for="firstname">Prénom</label><br>
+        <input type="text" name="firstname" id="firstname">
+    </div>
+    <div>
+        <label for="lastname">Nom</label><br>
+        <input type="text" name="lastname" id="lastname">
+    </div>
+    <br>
+    <button type="summit">Soumettre</button>
+</form>
+
+// formulaire
+<pre>
+<?php
+
+print_r($_POST);
+
+?>
+</pre>
+<form action="index.php" method="POST">
+    <div>
+        <label for="firstname">Prénom</label><br>
+        <input type="text" name="firstname" id="firstname">
+    </div>
+    <div>
+        <label for="lastname">Nom</label><br>
+        <input type="text" name="lastname" id="lastname">
+    </div>
+    <div>
+        <label for="email">Email</label><br>
+        <input type="email" name="email" id="email">
+    </div>
+    <div>
+        <label for="date">Date</label><br>
+        <input type="date" name="date" id="date">
+    </div>
+    <div>
+        <label for="femme">Femme</label>
+        <input type="radio" name="gender" id="femme" value="femme">
+        <label for="homme">Homme</label>
+        <input type="radio" name="gender" id="homme" value="homme">
+    </div>
+    <div>
+        <label for="cgu">CGU</label>
+        <input type="checkbox" name="cgu" id="cgu">
+    </div>
+    <div>
+        <label for="favorite">Favoris</label>
+        <select name="favorite" id="favorite">
+            <option value="wifi">Wifi</option>
+            <option value="tv">TV</option>
+            <option value="fibre">Fibre</option>
+        </select>
+    </div>
+    <br>
+    <button type="summit">Soumettre</button>
+</form>
+
+//
+
+<pre>
+<?php
+
+if (isset($_POST['firstname'])) {
+    $firstname = $_POST['firstname'];
+}
+
+//print_r($_POST);
+
+?>
+</pre>
+<h1>Bonjour <?= isset($firstname) ? $firstname : '!' ?> </h1>
+<form action="index.php" method="POST">
+    <div>
+        <label for="firstname">Prénom</label><br>
+        <input type="text" name="firstname" id="firstname">
+    </div>
+    <br>
+    <button type="summit">Soumettre</button>
+</form>
+
+//filter
+
+<pre>
+<?php
+
+$text = "<script>console.log('Salut')</script>";
+echo $text;
+echo filter_var($text, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+$text = "jean(du22)@-toto.fr";
+echo $text;
+echo filter_var($text, FILTER_SANITIZE_EMAIL);
+
+$text = "12abc";
+echo $text;
+echo "<br />";
+echo filter_var($text, FILTER_SANITIZE_NUMBER_INT);
+
+$text = "a10.5";
+echo $text;
+echo "<br />";
+echo filter_var($text, FILTER_SANITIZE_NUMBER_FLOAT);
+
+$text = "a10.5";
+echo $text;
+echo "<br />";
+echo filter_var($text, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+
+$text = "1,100.5";
+echo $text;
+echo "<br />";
+echo filter_var($text, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+
+$text = "1,100.5";
+echo $text;
+echo "<br />";
+echo filter_var($text, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION | FILTER_FLAG_ALLOW_THOUSAND);
+
+$arr = [
+    'email' => 'jean(du22)@-toto.fr',
+    'text' => '<script>const a = 1>/script>',
+    'number' => 'aa12aa'
+];
+
+print_r(filter_var_array($arr, FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+
+$arr = [
+    'email' => 'jean(du22)@-toto.fr',
+    'text' => '<script>const a = 1>/script>',
+    'number' => 'aa12aa'
+];
+
+print_r(filter_var_array($arr, [
+    'email' => FILTER_SANITIZE_EMAIL,
+    'text' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+    'number' => FILTER_SANITIZE_NUMBER_INT
+]));
+
+$arr = [
+    'email' => 'jean(du22)@-toto.fr',
+    'text' => "<script>const 'a' = 1>/script>",
+    'number' => 'aa12aa'
+];
+
+print_r(filter_var_array($arr, [
+    'email' => FILTER_SANITIZE_EMAIL,
+    'text' => [
+        'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+        'flags' => FILTER_FLAG_NO_ENCODE_QUOTES
+    ],
+    'number' => FILTER_SANITIZE_NUMBER_INT
+]));
+
+
+echo filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+print_r(filter_input_array(INPUT_POST, [
+    'firstname' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+    'email' => FILTER_SANITIZE_EMAIL
+]));
+
+?>
+</pre>
+<h1>Bonjour <?= isset($firstname) ? $firstname : '!' ?> </h1>
+<form action="index.php" method="POST">
+    <div>
+        <label for="firstname">Prénom</label><br>
+        <input type="text" name="firstname" id="firstname">
+    </div>
+    <br>
+    <button type="summit">Soumettre</button>
+</form>
+
+<pre>
+<?php
+
+$_POST = filter_input_array(INPUT_POST, [
+    'firstname' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+    'lastname' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+    'email' => FILTER_SANITIZE_EMAIL,
+    'date' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+    'gender' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+    'cgu' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+    'favorite' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
+]);
+
+?>
+</pre>
+<form action="/" method="POST">
+    <div>
+        <label for="firstname">Prénom</label><br>
+        <input type="text" name="firstname" id="firstname">
+    </div>
+    <div>
+        <label for="lastname">Nom</label><br>
+        <input type="text" name="lastname" id="lastname">
+    </div>
+    <div>
+        <label for="email">Email</label><br>
+        <input type="email" name="email" id="email">
+    </div>
+    <div>
+        <label for="date">Date</label><br>
+        <input type="date" name="date" id="date">
+    </div>
+    <div>
+        <label for="femme">Femme</label>
+        <input type="radio" name="gender" id="femme" value="femme">
+        <label for="homme">Homme</label>
+        <input type="radio" name="gender" id="homme" value="homme">
+    </div>
+    <div>
+        <label for="cgu">CGU</label>
+        <input type="checkbox" name="cgu" id="cgu">
+    </div>
+    <div>
+        <label for="favorite">Favoris</label>
+        <select name="favorite" id="favorite">
+            <option value="wifi">Wifi</option>
+            <option value="tv">TV</option>
+            <option value="fibre">Fibre</option>
+        </select>
+    </div>
+    <br>
+    <button type="summit">Soumettre</button>
+</form>
+
+//gestion d'erreur
+
+<pre>
+<?php
+
+const ERROR_REQUIRED = 'Veuillez renseignr ce champs';
+const ERROR_LENGHT = 'Le champ doit faire entre 2 et 10 caractères';
+const ERROR_EMAIL = "L'email n'est pas valide";
+
+$errors = [
+    'firstname' => '',
+    'email' => ''
+];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $_POST = filter_input_array(INPUT_POST, [
+        'firstname' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+        'email' => FILTER_SANITIZE_EMAIL
+    ]);
+
+    $firstname = $_POST['firstname'] ?? '';
+    $email = $_POST['email'] ?? '';
+
+    if (!$firstname) {
+        $errors['firstname'] = ERROR_REQUIRED;
+    } elseif (mb_strlen($firstname) < 2 || mb_strlen(($firstname) > 10)) {
+        $errors['firstname'] = ERROR_LENGHT;
+    }
+
+    if (!$email) {
+    $errors['email'] = ERROR_REQUIRED;
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors['email'] = ERROR_EMAIL;
+    }
+}
+
+?>
+</pre>
+<form action="/" method="POST">
+    <div>
+        <label for="firstname">Prénom</label><br>
+        <input type="text" name="firstname" id="firstname">
+        <?= $errors['firstname'] ? '<p style="color:red">' . $errors['firstname'] . "</p>" : '' ?>
+    </div>
+    <div>
+        <label for="email">Email</label><br>
+        <input type="text" name="email" id="email">
+        <?= $errors['email'] ? "<p style='color:red'>" . $errors['email'] . "</p>" : '' ?>
+    </div>
+    <br>
+    <button type="summit">Soumettre</button>
+</form>
+
+//
+
+<pre>
+<?php
+
+const ERROR_REQUIRED = 'Veuillez renseignr ce champs';
+const ERROR_LENGHT = 'Le champ doit faire entre 2 et 10 caractères';
+const ERROR_EMAIL = "L'email n'est pas valide";
+
+$errors = [
+    'firstname' => '',
+    'email' => ''
+];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $_POST = filter_input_array(INPUT_POST, [
+        'firstname' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+        'email' => FILTER_SANITIZE_EMAIL
+    ]);
+
+    $firstname = $_POST['firstname'] ?? '';
+    $email = $_POST['email'] ?? '';
+
+    if (!$firstname) {
+        $errors['firstname'] = ERROR_REQUIRED;
+    } elseif (mb_strlen($firstname) < 2 || mb_strlen(($firstname) > 10)) {
+        $errors['firstname'] = ERROR_LENGHT;
+    }
+
+    if (!$email) {
+    $errors['email'] = ERROR_REQUIRED;
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors['email'] = ERROR_EMAIL;
+    }
+}
+
+?>
+</pre> 
+<form action="/" method="POST">
+    <div>
+        <label for="firstname">Prénom</label><br>
+        <input type="text" name="firstname" id="firstname" value=<?= isset($firstname) ? "$firstname" : "" ?>><br>
+        <?= $errors['firstname'] ? '<p style="color:red">' . $errors['firstname'] . "</p>" : '' ?>
+    </div>
+    <div>
+        <label for="email">Email</label><br>
+        <input type="text" name="email" id="email" value=<?= isset($email) ? "$email" : "" ?>>
+        <?= $errors['email'] ? "<p style='color:red'>" . $errors['email'] . "</p>" : '' ?>
+    </div>
+    <br>
+    <button type="summit">Soumettre</button>
+</form>
+
+<pre>
+<?php
+
+const ERROR_REQUIRED = 'Veuillez renseignr ce champs';
+const ERROR_LENGHT = 'Le champ doit faire entre 2 et 10 caractères';
+const ERROR_EMAIL = "L'email n'est pas valide";
+
+$errors = [
+    'firstname' => '',
+    'email' => ''
+];
+
+$firstname = '';
+$email = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $_POST = filter_input_array(INPUT_POST, [
+        'firstname' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+        'email' => FILTER_SANITIZE_EMAIL
+    ]);
+
+    $firstname = $_POST['firstname'] ?? '';
+    $email = $_POST['email'] ?? '';
+
+    if (!$firstname) {
+        $errors['firstname'] = ERROR_REQUIRED;
+    } elseif (mb_strlen($firstname) < 2 || mb_strlen(($firstname) > 10)) {
+        $errors['firstname'] = ERROR_LENGHT;
+    }
+
+    if (!$email) {
+    $errors['email'] = ERROR_REQUIRED;
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors['email'] = ERROR_EMAIL;
+    }
+}
+
+?>
+</pre> 
+<form action="/" method="POST">
+    <div>
+        <label for="firstname">Prénom</label><br>
+        <input type="text" name="firstname" id="firstname" value=<?= "$firstname" ?>><br>
+        <?= $errors['firstname'] ? '<p style="color:red">' . $errors['firstname'] . "</p>" : '' ?>
+    </div>
+    <div>
+        <label for="email">Email</label><br>
+        <input type="text" name="email" id="email" value=<?= "$email" ?>>
+        <?= $errors['email'] ? "<p style='color:red'>" . $errors['email'] . "</p>" : '' ?>
+    </div>
+    <br>
+    <button type="summit">Soumettre</button>
+</form>
+
+//Introduction au système de fichiers
+
+<?php
+
+/* $filename = './test.txt'; */
+$dossier = __DIR__ . '/dossier';
+$filename = $dossier . '/test.txt';
+
+var_dump(file_exists($filename));
+echo "<br/>";
+var_dump(is_file($filename));
+echo "<br/>";
+var_dump(is_file($dossier));
+echo "<br/>";
+var_dump(is_dir($dossier));
+echo "<br/>";
+var_dump(is_dir($filename));
+
+//Lire et écrire dans un fichier
+
+<pre>
+<?php
+
+/* $filename = './test.txt'; */
+$dossier = __DIR__ . '/dossier';
+$filename = $dossier . '/test.txt';
+
+echo readfile($filename);
+echo "<br/>";
+$arr = file($filename);
+print_r($arr);
+echo "<br/>";
+$txt = file_get_contents($filename);
+echo $txt;
+echo "<br/>";
+file_put_contents($filename, 'Je suis une pomme', FILE_APPEND);
+
+?>
+</pre>
+
+// Lecture et écriture en mode binaire
+
+<pre>
+<?php
+
+$dossier = __DIR__ . '/dossier';
+$filename = $dossier . '/test.txt';
+
+$handle = fopen($filename, 'a+');
+
+// fwrite($handle, 'oops');
+// $data = fread($handle, 1);
+// echo $data;
+
+do {
+    $data = fread($handle, 1);
+    echo $data;
+} while ($data);
+
+fclose($handle);
+
+?>
+</pre>
+
+//Copier et supprimer des fichiers
+
+<pre>
+<?php
+
+$dossier = __DIR__ . '/dossier';
+$filename = $dossier . '/test.txt';
+
+// copy($filename, $dossier . "/copy.txt");
+
+// unlink($filename);
+rmdir($dossier);
+
+?> 
+</pre>
+
+//Manipuler du JSON en PHP
+
+<pre>
+<?php
+
+$filename = __DIR__  . "/data.json";
+$data = file_get_contents($filename);
+
+echo $data;
+echo "<br/>";
+$arr = json_decode($data, true);
+print_r($arr);
+echo "<br/>";
+$json = json_encode($arr);
+echo "<br/>";
+echo $json;
+
+file_put_contents(__DIR__ . "/data2.json", $json);
+
+?> 
+</pre>
+
+// Le contrôle de l’affichage
+
+<pre>
+<?php
+
+ob_start();
+echo "Hello";
+echo "<br/>";
+$content = ob_get_contents();
+// ob_end_clean();
+// ob_end_flush();
+ob_flush();
+ob_clean();
+// echo "Bye";
+// echo "<br/>";
+// echo $content;
+
+?> 
+</pre>
+
+<pre>
+<?php
+
+ob_start();
+require './page1.php';
+$content = ob_get_contents();
+ob_end_clean();
+
+require './layout.php';
+
+?> 
+</pre>
+
+// Cookies
+
+<pre>
+<?php
+
+print_r($_COOKIE);
+setcookie('name', 'Jean', time() + 60 * 60 * 24 * 30 * 3); //3 mois
+
+
+?> 
+</pre>
+
+<h1><?= $_COOKIE['name'] ?? 'Pas de cookie' ?></h1>
+
+<?php
+
+// setcookie('about', 'Je suis about', path: '/about.php');
+
+setcookie('about', 'Je suis about', httponly: true);
+
+?>
+
+<h1>about</h1>
+<h2><?= $_COOKIE['about'] ?? '' ?></h2>
+<a href="/">index</a>
+
+// Utilisation des sessions
+
+<pre>
+<?php
+
+session_start([
+    'save_path' => __DIR__ . '/sessions',
+    'cookie_lifetime' => 500
+]);
+
+$_SESSION['name'] = "Jean";
+$_SESSION['age'] = 12;
+session_commit();
+
+// session_unset();
+
+// session_destroy();
+
+// print_r($_SESSION);
+
+
+?> 
+</pre>
+
+<h1><?= $_SESSION['name'] ?></h1>
+
+// Manipuler des timestamp
+
+<pre>
+<?php
+
+date_default_timezone_set('Europe/Paris');
+echo date_default_timezone_get();
+echo "<br/>";
+echo "<br/>";
+
+$time = time();
+echo $time;
+echo "<br/>";
+echo date('d/m/Y à G:i:s', $time);
+echo "<br/>";
+echo "<br/>";
+
+$time2 = mktime(1, 1, 1, 1, 1, 21);
+echo $time2;
+echo "<br/>";
+echo date('d/m/Y à H:i:s', $time2);
+echo "<br/>";
+echo "<br/>";
+
+$time3 = strtotime('2021-02-15 15:01:05');
+echo $time3;
+echo "<br/>";
+echo date('d/m/Y à G:i:s', $time3);
+echo "<br/>";
+echo "<br/>";
+
+$time4 = strtotime('2021-04-28T14:06:28.365Z');
+echo $time4;
+echo "<br/>";
+echo date('d/m/Y à G:i:s', $time4);
+echo "<br/>";
+
+?> 
+</pre>
+
+//Afficher les dates localement
+
+<pre>
+<?php
+
+$time = time();
+
+$formateur = new IntlDateFormatter('fr_fr', IntlDateFormatter::FULL, IntlDateFormatter::NONE);
+$formateurArabe = new IntlDateFormatter('ar_ma', IntlDateFormatter::FULL, IntlDateFormatter::NONE);
+// $formateur = new IntlDateFormatter('fr_fr', IntlDateFormatter::LONG, IntlDateFormatter::LONG);
+// $formateur = new IntlDateFormatter('fr_fr', IntlDateFormatter::FULL, IntlDateFormatter::FULL);
+
+
+echo $formateur->format($time);
+echo "<br/>";
+echo "<br/>";
+echo $formateurArabe->format($time);
+// echo date('l d F', $time);
+echo "<br/>";
+echo "<br/>";
+
+
+?> 
+</pre>
+
+// L'objet DateTime
+
+<pre>
+<?php
+
+setlocale(LC_TIME, 'french');
+// date_default_timezone_set('Europe/Paris');
+echo date_default_timezone_get();
+
+$datetime = new DateTime('2021-02-15 15:01:05');
+print_r($datetime);
+echo "<br/>";
+
+echo $datetime->format('d/m/Y à G:i:s');
+
+$datetime2 = new DateTime('2021-02-16 12:01:05');
+
+$diff = $datetime->diff($datetime2, true);
+print_r($diff);
+echo "<br/>";
+
+echo $diff->format('%H heures');
+echo "<br/>";
+
+$datetime3 = new DateTime('now', new DateTimeZone('Europe/Paris'));
+echo $datetime3->format('d/m/Y à G:i:s');
+$datetime3->setTimezone(new DateTimeZone('UTC'));
+echo "<br/>";
+echo $datetime3->format('d/m/Y à G:i:s');
+
+?> 
+</pre>
+
+// Récupérer la date depuis un formulaire
+
+<pre>
+<?php
+
+date_default_timezone_set('Europe/Paris');
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $date = $_POST['date'] ?? '';
+    $time = $_POST['time'] ?? '';
+
+    $timestamp = strtotime("$date $time");
+    $dateformat = date(DateTime::ATOM, $timestamp);
+}
+
+?> 
+</pre>
+
+<form action="/" method="POST">
+    <input type="date" name="date">
+    <input type="time" name="time">
+    <button>Soumettre</button>
+</form>
+
+<h1>Date et Heure : <?= $dateformat ?? '' ?></h1>
+
+// Récupération du fuseau horaire du client
+<pre>
+<?php
+
+session_start();
+
+print_r($_SESSION);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['timezone'])) {
+    $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $date = $_POST['date'] ?? '';
+    $time = $_POST['time'] ?? '';
+    $timezone = $_SESSION['timezone'];
+
+    $datetime = new DateTime("$date $time", new DateTimeZone(($timezone)));
+    $dateTz = $datetime->format(DateTime::ATOM);
+    $datetime->setTimezone(new DateTimeZone('UTC'));
+    $dateNoTz = $datetime->format(DateTime::ATOM);
+}
+
+?> 
+</pre>
+<?php if (!isset($_SESSION['timezone'])) : ?>
+    <script>
+        fetch('/timezone.php', {
+            method: 'POST',
+            body: JSON.stringify({
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+            })
+        }).then(res => location.reload())
+    </script>
+<?php endif; ?>
+
+<form action="/" method="POST">
+    <input type="date" name="date">
+    <input type="time" name="time">
+    <button>Soumettre</button>
+</form>
+
+<h1>timezone : <?= $timezone ?? '' ?></h1>
+<h1>Date with tz : <?= $dateTz ?? '' ?></h1>
+<h1>Date UTC : <?= $dateNoTz ?? '' ?></h1>
+
+// 
+<pre>
+<?php
+
+session_start();
+
+print_r($_SESSION);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['timezone'])) {
+    $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $date = $_POST['date'] ?? '';
+    $time = $_POST['time'] ?? '';
+    $timezone = $_SESSION['timezone'];
+
+    $datetime = new DateTime("$date $time", new DateTimeZone(($timezone)));
+    $dateTz = $datetime->format(DateTime::ATOM);
+    $datetime->setTimezone(new DateTimeZone('UTC'));
+    $dateNoTz = $datetime->format(DateTime::ATOM);
+}
+
+?> 
+</pre>
+<?php if (!isset($_SESSION['timezone'])) : ?>
+    <script>
+        fetch('/timezone.php', {
+            method: 'POST',
+            body: JSON.stringify({
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+            })
+        }).then(res => location.reload())
+    </script>
+<?php endif; ?>
+
+<form action="/" method="POST">
+    <input type="date" name="date">
+    <input type="time" name="time">
+    <button>Soumettre</button>
+</form>
+
+<h1>timezone : <?= $timezone ?? '' ?></h1>
+<h1>Date with tz : <?= $dateTz ?? '' ?></h1>
+<h1>Date UTC : <?= $dateNoTz ?? '' ?></h1>
+
+//Déclarer une classe
+
+<pre>
+<?php
+
+class User
+{
+    public string $name = 'Jean';
+
+    public function greeting()
+    {
+        // var_dump($this);
+        return "Bonjour $this->name";
+    }
+}
+
+$user = new User();
+
+echo $user->name;
+echo "</br>";
+echo "</br>";
+
+$user->name = 'Paul';
+echo $user->name;
+echo "</br>";
+echo "</br>";
+
+echo $user->greeting();
+echo "</br>";
+echo "</br>";
+
+var_dump($user);
+
+$user2 = $user;
+
+var_dump($user2);
+
+$user->name = 'Louis';
+
+
+echo $user2->name;
+echo "</br>";
+echo "</br>";
+
+function modify($u)
+{
+    $u->name = 'Sarah';
+}
+
+modify($user);
+
+echo $user->name;
+
+?> 
+</pre>
+
+// Constructeur et destructeur
+
+<pre>
+<?php
+
+class User
+{
+    function __construct(public $name, public $age)
+    {
+        echo 'construct called';
+    }
+    function __destruct()
+    {
+        echo 'destruct called';
+    }
+}
+
+$user = new User('Jean', 12);
+$user2 = new User('Sarah', 44);
+
+var_dump($user);
+$user = null;
+var_dump($user2);
+
+?> 
+</pre>
+
+<pre>
+<?php
+
+class Reader
+{
+    function __construct(public $filename)
+    {
+        $this->$handle = fopen($filename, 'r');
+        echo 'construct called';
+    }
+
+    function read()
+    {
+        echo fread($this->$andle, 10);
+    }
+
+    function __destruct()
+    {
+        fclose($this->$handle);
+        echo 'destruct called';
+    }
+}
+
+$reader = new Reader(__DIR__ . '/test.txt');
+
+$reader->read();
+$reader
+
+?> 
+</pre>
+
+<pre>
+<?php
+
+class User
+{
+    public $isAdmin = false;
+
+    function __construct(public $name) {}
+
+    function greeting()
+    {
+        echo 'Hello';
+    }
+}
+
+class Admin extends User
+{
+    public $isAdmin = true;
+
+    function __construct($name)
+    {
+        parent::__construct($name);
+    }
+
+    function greeting()
+    {
+        parent::greeting();
+        echo 'admin';
+    }
+}
+
+$user = new User('Jean');
+$admin = new Admin('Sarah');
+
+var_dump($user);
+var_dump($admin);
+
+?> 
+</pre>
+
+// Visibilité : public, private ou protected
+
+<pre>
+<?php
+
+class User
+{
+    // public $secret;
+    // private $secret = '12321313';
+    protected $secret = '12321313';
+
+    function __construct(public $name) {}
+
+    function createMdp()
+    {
+        echo $this->secret;
+    }
+}
+
+class Admin extends User
+{
+    function test()
+    {
+        echo $this->secret;
+    }
+}
+
+$user = new User('Jean');
+$admin = new Admin('Sarah');
+
+echo $user->name;
+echo "<br>";
+echo "<br>";
+
+echo $user->createMdp();
+echo "<br>";
+echo "<br>";
+
+var_dump($user);
+var_dump($admin);
+
+$admin->test();
+
+?> 
+</pre>
+
+// Accesseurs, mutateurs et méthodes magiques
+
+<pre>
+<?php
+
+class User
+{
+    private $fullName;
+
+    function __construct(private $firstName, private $lastName)
+    {
+        $this->fullName = $firstName . ' ' . $lastName;
+    }
+
+    function __destruct() {}
+
+    function getfFullName()
+    {
+        return $this->fullName;
+    }
+
+    function getFfirstName()
+    {
+        return $this->firstName;
+    }
+
+    function setFfirstName($value)
+    {
+        $this->firstName = $value;
+        $this->fullName = $this->firstName . ' ' . $this->lastName;
+    }
+}
+
+$user = new User(firstName: 'Jean', lastName: 'Dupont');
+
+echo $user->getfFullName();
+echo "<br>";
+$user->setFfirstName('Paul');
+echo "<br>";
+
+echo $user->getfFullName();
+echo "<br>";
+
+?> 
+</pre>
+
+//
+
+<pre>
+<?php
+
+class User
+{
+    private $fullName;
+
+    function __construct(private $firstName, private $lastName)
+    {
+        $this->fullName = $firstName . ' ' . $lastName;
+    }
+
+    function __destruct() {}
+
+    function __get($prop)
+    {
+        return $this->$prop;
+    }
+
+    function __set($prop, $value)
+    {
+        $this->$prop = $value;
+        if ($prop === "firstName" || $prop === 'lastName') {
+            $this->fullName = $this->firstName . ' ' . $this->lastName;
+        }
+    }
+}
+
+$user = new User(firstName: 'Jean', lastName: 'Dupont');
+
+echo $user->fullName;
+$user->firstName = 'Paul';
+echo "<br>";
+echo "<br>";
+echo $user->fullName;
+echo "<br>";
+
+?> 
+</pre>
+
+//
+
+<pre>
+<?php
+
+class User
+{
+    private $fullName;
+
+    function __construct(private $firstName, private $lastName)
+    {
+        $this->fullName = $firstName . ' ' . $lastName;
+    }
+
+    function __destruct() {}
+
+    function __get($prop)
+    {
+        return $this->$prop;
+    }
+
+    function __set($prop, $value)
+    {
+        $this->$prop = $value;
+        if ($prop === "firstName" || $prop === 'lastName') {
+            $this->fullName = $this->firstName . ' ' . $this->lastName;
+        }
+    }
+
+    function __toString()
+    {
+        return "$this->firstName, $this->lastName";
+    }
+
+    function __isset($prop)
+    {
+        return isset($this->$prop);
+    }
+
+    function __unset($prop)
+    {
+    }
+}
+
+$user = new User(firstName: 'Jean', lastName: 'Dupont');
+
+echo $user;
+
+if (isset($user->fullName)) {
+    echo "<br>";
+    echo 'ok';
+};
+
+
+if (unset($user->fullName)) {
+    echo "<br>";
+    echo 'ok';
+};
+
+?> 
+</pre>
+
+// Constantes et propriétés statiques
+
+<pre>
+<?php
+
+class Foo
+{
+    static $a = 1;
+}
+
+echo Foo::$a;
+echo "<br>";
+
+?> 
+</pre>
+
+//
+
+<pre>
+<?php
+
+class Foo
+{
+    static $a = 1;
+
+    function func()
+    {
+        echo self::$a;
+    }
+}
+
+echo Foo::$a;
+echo "<br>";
+$foo = new Foo();
+$foo->func();
+echo "<br>";
+
+?> 
+</pre>
+
+//
+
+<pre>
+<?php
+
+class Foo
+{
+    static $nbrOfInstance = 0;
+
+    function __construct()
+    {
+        self::$nbrOfInstance++;
+    }
+
+    static function getNbrOfInstance()
+    {
+        return self::$nbrOfInstance;
+    }
+}
+
+$foo = new Foo();
+$foo1 = new Foo();
+// $foo2 = new Foo();
+
+echo Foo::getNbrOfInstance();
+echo "<br>";
+
+?> 
+</pre>
+
+//
+
+<pre>
+<?php
+
+class Foo
+{
+    static $nbrOfInstance = 0;
+    const CLASSNAME = 'FOO';
+
+    function __construct()
+    {
+        self::$nbrOfInstance++;
+    }
+
+    static function getNbrOfInstance()
+    {
+        return self::$nbrOfInstance;
+    }
+}
+
+$foo = new Foo();
+
+echo Foo::CLASSNAME;
+echo "<br>";
+
+?> 
+</pre>
+
+//
+
+<pre>
+<?php
+
+class Foo
+{
+    static $nbrOfInstance = 0;
+    const CLASSNAME = 'FOO';
+
+    function __construct()
+    {
+        self::$nbrOfInstance++;
+    }
+
+    static function getNbrOfInstance()
+    {
+        return self::$nbrOfInstance;
+    }
+}
+
+echo DateTime::ATOM;
+echo "<br>";
+echo "<br>";
+$foo = new Foo();
+
+echo Foo::CLASSNAME;
+echo "<br>";
+
+?> 
+</pre>
+
+//
+
+<pre>
+<?php
+
+class Foo
+{
+    static $a = 1;
+
+    function func()
+    {
+        echo " static : " . self::$a;
+    }
+}
+
+class Bar extends Foo
+{
+    static $a = 2;
+}
+
+$bar = new Bar();
+echo "<br>";
+echo "<br>";
+$bar->func();
+
+echo "<br>";
+
+?> 
+</pre>
+
+//
+
+<pre>
+<?php
+
+class Foo
+{
+    static $a = 1;
+
+    function func()
+    {
+        echo " static : " . static::$a;
+    }
+}
+
+class Bar extends Foo
+{
+    static $a = 2;
+
+    function func()
+    {
+        echo parent::$a;
+    }
+}
+
+$bar = new Bar();
+echo "<br>";
+echo "<br>";
+$bar->func();
+
+echo "<br>";
+
+?> 
+</pre>
+
+// Classes abstraites, interfaces et traits
+
+<pre>
+<?php
+
+abstract class Greeting
+{
+    function setFirstName($value)
+    {
+        $this->firstName = $value;
+    }
+    function getFirstName()
+    {
+        return $this->firstName;
+    }
+    function setLastName($value)
+    {
+        $this->lastName = $value;
+    }
+    function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    abstract function greeting();
+}
+
+class User extends Greeting
+{
+    function greeting()
+    {
+        echo "Je suis un User Lambda";
+    }
+}
+
+class Admin extends Greeting
+{
+    function greeting()
+    {
+        echo "Je suis un User Admin";
+    }
+}
+
+$u = new User();
+$u->setFirstName('Jean');
+$u->greeting();
+
+echo "<br>";
+
+?> 
+</pre>
+
+//
+
+<pre>
+<?php
+
+class Login {}
+
+interface Greeting
+{
+    function greeting();
+}
+
+interface Move
+{
+    function move(int $speed): string;
+}
+
+class User extends Login implements Greeting
+{
+    function greeting()
+    {
+        echo "Je suis un User Lambda";
+    }
+    function move(int $speed): string
+    {
+        return 'move';
+    }
+}
+
+$u = new User();
+$u->greeting();
+
+echo "<br>";
+
+?> 
+</pre>
+
+//
+
+<pre>
+<?php
+
+class Login {}
+
+interface Greeting
+{
+    function greeting();
+}
+
+trait Move
+{
+    function move()
+    {
+        echo 'Je bouge';
+    }
+
+    function jump()
+    {
+        echo 'Je saute';
+    }
+}
+
+class Admin
+{
+    use Move;
+}
+
+$admin = new Admin();
+
+$admin->jump();
+echo "<br>";
+echo "<br>";
+
+class User extends Login implements Greeting
+{
+    use Move;
+
+    function greeting()
+    {
+        echo "Je suis un User Lambda";
+    }
+}
+
+$u = new User();
+$u->greeting();
+
+echo "<br>";
+
+?> 
+</pre>
+
+// Utiliser une classe comme type et l’opérateur nullsafe
+
+<pre>
+<?php
+class Wallet
+{
+    function __construct(public int $amount) {}
+}
+class User
+{
+    private string $fullName;
+    private bool $isAdmin;
+    public $wallet;
+
+    function setFullName(string $fullName): void
+    {
+        $this->fullName - $fullName;
+    }
+
+    function getWallet(): Wallet
+    {
+        return $this->wallet;
+    }
+
+    function setWallet(Wallet $wallet) {}
+}
+
+echo "<br>";
+
+?> 
+</pre>
+
+//
+<pre>
+<?php
+class Wallet
+{
+    function __construct(public int $amount) {}
+}
+class User
+{
+    private string $fullName;
+    private bool $isAdmin;
+    public ?Wallet $wallet;
+
+    function setFullName(string $fullName): void
+    {
+        $this->fullName - $fullName;
+    }
+
+    function getWallet(): Wallet
+    {
+        return $this->wallet;
+    }
+
+    function setWallet(?Wallet $wallet)
+    {
+        $this->wallet = $wallet;
+    }
+}
+
+$user = new User();
+
+$user->setWallet(new Wallet(120));
+echo $user->wallet->amount;
+echo "<br>";
+$user->setWallet(null);
+echo $user->wallet?->amount;
+
+?> 
+</pre>
+
+// Namespaces
+
+<pre>
+<?php
+
+use Dyma\User;
+use function Dyma\func;
+use const Dyma\Test;
+
+require __DIR__ . "/lib/User.php";
+
+$user = new User('Jean');
+
+func();
+
+echo "<br>";
+echo Test;
+echo "<br>";
+
+?> 
+</pre>
+
+// Namespaces composés
+
+<pre>
+<?php
+
+use Dyma\model\User;
+use Dyma\model\Email;
+use function Dyma\model\func;
+use const Dyma\model\Test;
+
+require __DIR__ . "/lib/model/User.php";
+require __DIR__ . "/lib/model/Email.php";
+
+echo __NAMESPACE__;
+
+$user = new User();
+echo "<br>";
+
+func();
+echo "<br>";
+
+echo Test;
+echo "<br>";
+
+$email = new Email();
+echo "<br>";
+
+
+?> 
+</pre>
+
+// La notation raccourcie
+
+<pre>
+<?php
+
+use Dyma\model\{User, Admin, Email};
+use Dyma\model\User as DymaUser;
+use function Dyma\model\{func, func2};
+use const Dyma\model\{Test, FOO};
+
+require __DIR__ . "/lib/model/User.php";
+require __DIR__ . "/lib/model/Email.php";
+
+class User extends DymaUser {}
+
+echo "<br>";
+$admin = new Admin();
+echo "<br>";
+
+$user = new User();
+echo "<br>";
+
+func();
+echo "<br>";
+
+echo Test;
+echo "<br>";
+
+$email = new Email();
+echo "<br>";
+
+?> 
+</pre>
+
+// Utiliser plusieurs namespaces dans le même fichier
+
+<pre>
+<?php
+
+use Dyma\model\{Admin, Email};
+use Dyma\model\User as DymaUser;
+use function Dyma\model\{func, func2};
+use const Dyma\model\{Test, FOO};
+use const Dyma\const\GLOB;
+
+require __DIR__ . "/lib/model/User.php";
+require __DIR__ . "/lib/model/Email.php";
+
+class User extends DymaUser {}
+
+echo "<br>";
+$admin = new Admin();
+echo "<br>";
+
+$user = new User('Jean');
+echo "<br>";
+
+func();
+echo "<br>";
+
+echo Test;
+echo "<br>";
+
+$email = new Email();
+echo "<br>";
+
+echo GLOB;
+
+?> 
+</pre>
+
+// Les warnings, les erreurs et les exceptions
+
+//warning
+<pre>
+<?php
+
+set_error_handler(function (
+    $no,
+    $str,
+    $file,
+    $line
+) {
+    echo $no;
+    echo "<br>";
+    echo $str;
+    echo "<br>";
+    echo $file;
+    echo "<br>";
+    echo  $line;
+    echo "<br>";
+});
+
+echo $var;
+
+echo 'Salut';
+
+echo "<br>";
+
+?> 
+</pre>
+
+//error
+
+<pre>
+<?php
+
+function test()
+{
+    throw new Error('Oops');
+}
+
+test();
+
+?> 
+</pre>
+
+//exceptions
+
+<pre>
+<?php
+
+function test()
+{
+    throw new Exception('Exception');
+}
+
+test();
+
+echo 'Salut';
+
+?> 
+</pre>
+
+// Try, catch et finally
+
+<pre>
+<?php
+
+function test()
+{
+    throw new Exception('Exception');
+    // throw new Error('Oops une erreur');
+}
+
+try {
+    test();
+} catch (Exception $e) {
+    echo $e;
+    // var_dump($e);
+} catch (Error $e) {
+    echo 'erreur : ' . $e;
+}
+
+try {
+    test();
+} catch (Throwable $e) {
+    echo $e;
+}
+
+try {
+    test();
+} catch (Throwable $e) {
+    echo $e;
+} finally {
+    echo 'In finally';
+}
+
+try {
+    $var();
+} catch (Throwable $e) {
+    echo $e;
+}
+
+// echo 'Salut';
+
+?> 
+</pre>
+
+// Exceptions personnalisées
+
+<pre>
+<?php
+
+class MyCustomErrorExceptions extends Exception {}
+
+function test()
+{
+    throw new MyCustomErrorExceptions();
+}
+
+try {
+    test();
+} catch (MyCustomErrorExceptions $e) {
+    echo 'other';
+} catch (Exception $e) {
+    header('Location: /error.php');
+}
+
+?> 
+</pre>
+
+// Configuration des erreurs suivant l’environnement
+
+<pre>
+<?php
+
+class MyCustomErrorExceptions extends Exception {}
+
+function test()
+{
+    throw new Exception();
+    // throw new MyCustomErrorExceptions();
+}
+
+try {
+    test();
+} catch (MyCustomErrorExceptions $e) {
+    echo 'other';
+} catch (Exception $e) {
+    header('Location: /error.php');
+}
+
+?> 
+</pre>
+
+<pre>
+<?php
+
+define('ENV', getenv('ENV'));
+
+echo ENV;
+
+?> 
+</pre>
+
+// 
+// Requêtes préparées et exécution
+
+<pre>
+<?php
+$dsn = 'mysql:host=localhost;dbname=test';
+$user = 'root';
+$password = '123456';
+
+try {
+    $pdo = new PDO($dsn, $user, $password, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+    ]);
+    echo 'Connexion Ok!';
+} catch (PDOException $e) {
+    echo 'Connexion échouée : ' . $e->getMessage();
+}
+
+$statement = $pdo->prepare('INSERT INTO user VALUES (
+    DEFAULT,
+    ?,
+    ?,
+    ?,
+    ?
+    )');
+
+$user = [
+    'firstname' => 'Paul',
+    'lastname' => 'Leroi',
+    'email' => 'paul@gmail.com',
+    'password' => '159'
+];
+
+
+$statement->execute([
+    $user['firstname'],
+    $user['lastname'],
+    $user['email'],
+    $user['password'],
+]);
+
+$user = [
+    'firstname' => 'Marie',
+    'lastname' => 'Frange',
+    'email' => 'mariel@gmail.com',
+    'password' => '753'
+];
+
+
+$statement->execute([
+    $user['firstname'],
+    $user['lastname'],
+    $user['email'],
+    $user['password'],
+]);
+
+// $statement = $pdo->prepare('INSERT INTO user VALUES (
+// DEFAULT,
+// "Adam",
+// "Smith",
+// "adam@gmail.com",
+// "249"
+// )');
+
+// $statement->execute();
+
+// $statement = $pdo->query('INSERT INTO user VALUES (
+//     DEFAULT,
+//     "Milou",
+//     "Tintin",
+//     "milou@gmail.com",
+//     "789"
+//     )');
+
+?>
+</pre>
+
+//
+
+<pre>
+<?php
+$dsn = 'mysql:host=localhost;dbname=test';
+$user = 'root';
+$password = '123456';
+
+try {
+    $pdo = new PDO($dsn, $user, $password, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+    ]);
+    echo 'Connexion Ok!';
+} catch (PDOException $e) {
+    echo 'Connexion échouée : ' . $e->getMessage();
+}
+
+$user = [
+    'firstname' => 'Leon',
+    'lastname' => 'Molin',
+    'email' => 'leon@gmail.com',
+    'password' => '356'
+];
+
+$statement = $pdo->prepare('INSERT INTO user VALUES (
+    DEFAULT,
+    :firstname,
+    :lastname,
+    :email,
+    :password
+)');
+
+$statement->bindParam(':firstname', $user['firstname']);
+$statement->bindParam(':lastname', $user['lastname']);
+$statement->bindParam(':email', $user['email']);
+$statement->bindParam(':password', $user['password']);
+
+
+// $statement->bindParam(1, $user['firstname']);
+// $statement->bindParam(2, $user['lastname']);
+// $statement->bindParam(3, $user['email']);
+// $statement->bindParam(4, $user['password']);
+
+// $user['firstname'] = 'Laurine';
+
+// $statement->bindValue(1, $user['firstname']);
+// $statement->bindValue(2, $user['lastname']);
+// $statement->bindValue(3, $user['email']);
+// $statement->bindValue(4, $user['password']);
+
+$statement->execute();
+
+?>
+</pre>
+
+// Récupération des résultats
+
+<pre>
+<?php
+$dsn = 'mysql:host=localhost;dbname=test';
+$user = 'root';
+$password = '123456';
+
+try {
+    $pdo = new PDO($dsn, $user, $password, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+    ]);
+    echo 'Connexion Ok!';
+} catch (PDOException $e) {
+    echo 'Connexion échouée : ' . $e->getMessage();
+}
+
+class User
+{
+    function __construct(...$args)
+    {
+        print_r($args);
+    }
+
+    function greeting()
+    {
+        echo 'Hello ' . $this->firstname . ' ' . $this->lastname;
+    }
+}
+
+$statement = $pdo->prepare('SELECT * FROM user WHERE iduser=:id');
+$statement->bindValue(':id', 15);
+
+$user = $statement->execute();
+
+$userassoc = $statement->fetch();
+
+$user = new User();
+
+// $user = $statement->fetchObject('User', ['1', 'pouet']);
+
+$user->greeting();
+
+// $user = $statement->fetch();
+
+// $users = $statement->fetchAll();
+
+// print_r($users);
+
+?>
+</pre>
+
+<pre>
+<?php
+$dsn = 'mysql:host=localhost;dbname=test';
+$user = 'root';
+$password = '123456';
+
+try {
+  $pdo = new PDO($dsn, $user, $password, [
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+  ]);
+  echo 'Connexion Ok!';
+} catch (PDOException $e) {
+  echo 'Connexion échouée : ' . $e->getMessage();
+}
+
+class User
+{
+  function __construct(...$args)
+  {
+    print_r($args);
+  }
+
+  function greeting()
+  {
+    echo 'Hello ' . $this->firstname . ' ' . $this->lastname;
+  }
+}
+
+$statement = $pdo->prepare('SELECT * FROM user WHERE iduser=:id');
+$statement->bindValue(':id', 15);
+
+$user = $statement->execute();
+
+$userassoc = $statement->fetch();
+
+$user = new User();
+
+// $user = $statement->fetchObject('User', ['1', 'pouet']);
+
+$user->greeting();
+
+// $user = $statement->fetch();
+
+// $users = $statement->fetchAll();
+
+// print_r($users);
+
+?>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Les bordures</title>
+    <style>
+      p {
+        background: red;
+        width: 90px;
+        height: 90px;
+        border-width: 2px;
+      }
+      .bordure1 {
+        border-top-style: none;
+      }
+      .bordure2 {
+        border-style: hidden;
+      }
+      /* En haut et en bas */
+      .bordure3 {
+        border-style: dotted none;
+      }
+      /* A gauche et à droite */
+      .bordure4 {
+        border-style: none dashed;
+      }
+      /* Que à droite */
+      .bordure5 {
+        border-right-style: solid;
+      }
+      /* Haut, gauche/droite et bas */
+      .bordure6 {
+        border-style: none double double;
+      }
+      .bordure7 {
+        border-style: groove;
+      }
+      .bordure8 {
+        border-style: ridge;
+      }
+      .bordure9 {
+        border-style: inset;
+      }
+      .bordure10 {
+        border-style: outset;
+      }
+      .arrondi {
+        border-radius: 10px;
+      }
+      .raccourci {
+        border: dashed green 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="bordure1 arrondi">Pas de bordure</p>
+    <p class="bordure2">Bordure cachée</p>
+    <p class="bordure3">Dotted</p>
+    <p class="bordure4">Dashed</p>
+    <p class="bordure5">Solid</p>
+    <p class="bordure6">Double</p>
+    <p class="bordure7">Groove</p>
+    <p class="bordure8">Ridge</p>
+    <p class="bordure9">Inset</p>
+    <p class="bordure10">Outset</p>
+    <p class="raccourci">Raccourci</p>
+  </body>
+</html>

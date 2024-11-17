@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mise en forme du texte</title>
+  </head>
+  <body>
+    <!-- Faites varier la taille de la fenêtre pour voir que seules les unitées
+    relatives font varier la taille des textes. -->
+
+    <!-- Exemples d'Unités absolus -->
+    <p style="font-size: 12px">Lorem ipsum dolor sit amet.</p>
+    <p style="font-size: 0.5cm">Lorem ipsum dolor sit amet.</p>
+
+    <br />
+
+    <!-- Exemples d'Unités relatives -->
+    <!-- Nous créons un élément parent pour distinguer rem/em -->
+    <div style="font-size: 10px">
+      <p style="font-size: 2em">
+        Je suis en em donc par rapport à l'élément parent.
+      </p>
+      <p style="font-size: 2rem">
+        Je suis en rem donc par rapport à l'élément racine
+      </p>
+      <p style="font-size: 2vh">J'ai 2% de la hauteur de l'écran.</p>
+      <p style="font-size: 2vw">J'ai 2% de la largeur de l'écran.</p>
+      <p style="font-size: 2vmax">
+        Je fais 2% de la dimension (hauteur ou largeur) la plus grande.
+      </p>
+    </div>
+  </body>
+</html>

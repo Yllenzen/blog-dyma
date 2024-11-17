@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Appliquer des styles CSS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Subtilités sur le combinateur enfant -->
+    <div>
+      <span
+        >Rouge
+        <p>Aussi rouge car dans le span sélectionné</p>
+      </span>
+      <p>
+        <span
+          >Match pas car pas descendant direct. Il y a un élément p entre les
+          deux.</span
+        >
+      </p>
+    </div>
+
+    <br />
+
+    <!-- Subtilités sur le combinateur enfant -->
+    <p>
+      <span>
+        <span>
+          <span>Test</span>
+        </span>
+      </span>
+    </p>
+
+    <!-- Observez la différence avec le combinateur descendant -->
+    <div class="test3">
+      <p>
+        <span
+          >Match car descendant indirect, même si il y a un élément p entre les
+          deux.</span
+        >
+      </p>
+    </div>
+  </body>
+</html>

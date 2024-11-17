@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Couleurs</title>
+  </head>
+  <body>
+    <!-- Utilisation du système RGB en base 10 -->
+    <!-- Ici nous avons pour le rouge 197, 93 pour le vert et 161 pour le bleu -->
+    <p style="color: rgb(197, 93, 161)">Test</p>
+    <p style="color: rgb(255, 0, 0)">Test</p>
+    <p style="color: rgb(0, 255, 0)">Test</p>
+    <p style="color: rgb(0, 0, 255)">Test</p>
+    <p style="color: rgb(0, 0, 0)">Test</p>
+    <p style="color: rgb(255, 255, 255)">invisible car blanc sur blanc</p>
+
+    <br />
+
+    <!-- Utilisation du système RGBA -->
+    <p style="color: rgba(255, 0, 0, 0.2)">Test</p>
+    <p style="color: rgb(255, 0, 0, 0.5)">Test</p>
+    <p style="color: rgb(255, 0, 0, 0.9)">Test</p>
+
+    <br />
+    <!-- Utilisation du système hexadécimal -->
+    <p style="color: #ff0000">Test</p>
+    <p style="color: #00ff00">Test</p>
+    <p style="color: #0000ff">Test</p>
+    <!-- Même chose que la première couleur RGB ci-dessus mais en hex -->
+    <p style="color: #c55da1">Test</p>
+    <p style="color: #000000">Test</p>
+    <p style="color: #ffffff">blanc</p>
+
+    <br />
+    <!-- Avec transparence, en passant un alpha sur le dernier octet : -->
+    <p style="color: #ff000066">Test</p>
+    <!-- 66 équivaut en base 10 à 102 et 102/255 = 40% -->
+    <!-- Nous obtenons donc 40% d'opacité -->
+  </body>
+</html>

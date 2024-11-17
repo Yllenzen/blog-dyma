@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Gérer la taille des éléments</title>
+    <style>
+      /* Nous fixons une hauteur de toute la hauteur de l'écran */
+      body {
+        height: 100vh;
+      }
+      /* Une boite pour visualiser la taille des éléments */
+      .boite {
+        border: 1px solid black;
+      }
+      /* Nous fixons une largeur et une hauteur */
+      .fixe {
+        width: 300px;
+        height: 80px;
+      }
+      .pourcentage {
+        width: 80%;
+        height: 50%;
+      }
+      .largeur-min {
+        min-width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Taille naturelle -->
+    <!-- Une div vide n'a pas de hauteur -->
+    <div class="boite"></div>
+    <br />
+    <!-- Une div prend la hauteur de son contenu -->
+    <div class="boite">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae officiis
+      commodi molestias repellendus nobis minima aspernatur labore doloribus
+      perspiciatis doloremque provident assumenda a ab atque pariatur totam,
+      quos nostrum laboriosam.
+    </div>
+
+    <br />
+    <!-- Fixer la taille des éléments -->
+    <!-- Ici le texte dépasse, c'est ce qui s'appelle un overflow 
+      et nous verrons comment le régler -->
+    <p class="fixe boite">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus a
+      tenetur assumenda, eligendi molestiae aut nulla sunt. Ut esse a amet
+      numquam nam minima explicabo itaque officia, exercitationem incidunt
+      recusandae!
+    </p>
+    <br />
+
+    <!-- Utilisation de pourcentages -->
+    <!-- Ici l'élément parent est body qui a une hauteur de 100vh
+    Nous aurons donc une hauteur de 50% de 100vh, soit 50vh.
+    Pour la largeur ce sera 80% de 100vw donc 80vw. -->
+    <p class="pourcentage boite">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+      incidunt illum natus, suscipit sint itaque tempora quis est, quos vel
+      error consequuntur! Veniam aspernatur nam, cum sed delectus dolore
+      distinctio.
+    </p>
+    <!-- Ici le parent est la div qui a une hauteur de 80px.
+    Le paragraphe aura donc une hauteur de 50% de 80 soit 40px.
+    Pour la largeur ce sera 80% de 300px donc 240px. -->
+    <div class="fixe">
+      <p class="pourcentage boite">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, ipsa!
+      </p>
+    </div>
+
+    <br />
+    <!-- Réduisez la largeur de la fenêtre
+    Vous pouvez observer que malgré le fait que la largeur soit définie à 80% par la classe pourcentage,
+    le fait de mettre une min-width à 500px avec la classe largeur-min empêche la largeur de diminuer en
+    dessous de 500px. -->
+    <p class="largeur-min pourcentage">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam rem
+      mollitia quod recusandae iusto? Dolorum odio explicabo voluptate nesciunt
+      architecto ipsum impedit sit temporibus illo qui culpa possimus, ullam
+      aperiam.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "name": "nelly/compose",
+    "authors": [
+        {
+            "name": "nelly",
+            "email": "nbourliaud@sellsy.com"
+        }
+    ],
+    "require": {
+        "symfony/error-handler": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "myproject\\": "src/"
+        }
+    }
+}

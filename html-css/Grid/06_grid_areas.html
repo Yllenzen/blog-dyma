@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid zones</title>
+    <style>
+      .body {
+        margin: 0;
+      }
+
+      .container {
+        height: 100vh;
+        display: grid;
+        background: green;
+        /* grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+          "header header header header"
+          "main main . aside"
+          "main main . aside"
+          "footer footer footer footer"; */
+        grid:
+          "header header header header" 1fr
+          "main main main aside" 1fr
+          "main main main aside" 1fr
+          "footer footer footer footer" 1fr
+          / 1fr 1fr 1fr 1fr;
+      }
+
+      header {
+        /* grid-area: 2 / 2 / 3 / 4; */
+        grid-area: header;
+        background: red;
+      }
+      main {
+        grid-area: main;
+        background: purple;
+      }
+      footer {
+        grid-area: footer;
+        background: #333;
+      }
+      aside {
+        grid-area: aside;
+        background: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header></header>
+      <main></main>
+      <aside></aside>
+      <footer></footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filtres et Opacité</title>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      body img {
+        width: 1000px;
+        /* filter: blur(5px); */
+        /* filter: brightness(30%); */
+        /* filter: contrast(50%); */
+        /* filter: drop-shadow(5px 5px 2px blue); */
+        /* filter: grayscale(20%); */
+        /* filter: invert(15%); */
+        /* filter: sepia(100%); */
+        /* filter: grayscale(100%); */
+        opacity: 0.5;
+      }
+
+      body img:hover {
+        opacity: 1;
+        /* filter: grayscale(0%); */
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./img/image.jpg" alt="" />
+  </body>
+</html>

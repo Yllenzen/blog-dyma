@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Les positions</title>
+    <style>
+      body {
+        height: 200vh;
+        width: 200vw;
+      }
+      .boite {
+        display: inline-block;
+        background: orange;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 50px;
+      }
+      #relatif1 {
+        position: relative;
+        top: 30px;
+        border: 1px black solid;
+      }
+      #relatif2 {
+        position: relative;
+        top: 30px;
+        left: -10px;
+        border: 1px black solid;
+      }
+      #absolu1 {
+        position: absolute;
+        top: 320px;
+        border: 1px black solid;
+      }
+      .container {
+        position: relative;
+        height: 200px;
+        width: 500px;
+        box-sizing: border-box;
+        border: 5px red solid;
+      }
+      #absolu2 {
+        position: absolute;
+        top: 10px;
+        border: 1px black solid;
+      }
+      #fixed1 {
+        position: fixed;
+        top: 650px;
+        left: 300px;
+        border: 1px black solid;
+      }
+      #sticky1 {
+        position: sticky;
+        top: 650px;
+        left: 50px;
+        border: 1px black solid;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>La position relative</h2>
+    <div class="boite">Un</div>
+    <div class="boite" id="relatif1">Deux</div>
+    <div class="boite">Trois</div>
+    <div class="boite" id="relatif2">Quatre</div>
+
+    <h2>La position absolue</h2>
+    <div class="boite">Un</div>
+    <!-- L'élément est positionné à 320px du haut car son élément parent est <html>.
+     Il prend en compte l'espace occupé par la première boite qui est dans le flux normal.
+     Par contre l'élément suivant ne le prend pas en compte car il n'occupe pas d'espace dans le flux normal. -->
+    <div class="boite" id="absolu1">Deux</div>
+    <div class="boite">Trois</div>
+    <div class="boite">Quatre</div>
+    <div class="container">
+      <div class="boite">Un</div>
+      <div class="boite">Deux</div>
+      <!-- Le parent positionné le plus proche est le container.
+        La position est donc déterminée par rapport à la position de celui-ci. -->
+      <div class="boite" id="absolu2">Trois</div>
+      <div class="boite">Quatre</div>
+    </div>
+
+    <h2>La position fixed</h2>
+    <div class="boite">Un</div>
+    <div class="boite">Deux</div>
+    <!-- Scrollez vers le bas et / ou vers la droite pour tester la position fixed -->
+    <div class="boite" id="fixed1">Trois</div>
+    <div class="boite">Quatre</div>
+
+    <h2>La position sticky</h2>
+    <div class="boite">Un</div>
+    <!-- Scrollez vers le bas et / ou vers la droite pour tester la position sticky -->
+    <!-- L'élément restera en position relative jusqu'à ce que le défilement place l'élément à 650px du haut
+      ou à 50px de la gauche. A ce moment, l'élément sera en position fixed et restera exactement à 650pd du haut ou
+      à 50px de la gauche.  -->
+    <div class="boite" id="sticky1">Deux</div>
+    <div class="boite">Trois</div>
+    <div class="boite">Quatre</div>
+  </body>
+</html>

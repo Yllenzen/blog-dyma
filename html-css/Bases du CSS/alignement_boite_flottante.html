@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>L'alignement des textes et les boites flottantes</title>
+    <style>
+      .texte {
+        display: inline-block;
+        border: 2px solid black;
+        width: 500px;
+        margin: 2px;
+      }
+      .carre {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background: red;
+      }
+      .gauche {
+        text-align: left;
+      }
+      .droite {
+        text-align: right;
+      }
+      .centre {
+        text-align: center;
+      }
+      .justifie {
+        text-align: justify;
+      }
+      /* Les boites flottantes */
+      img {
+        width: 300px;
+        height: 200px;
+      }
+      .flottegauche {
+        margin-right: 10px;
+        float: left;
+      }
+      .flottedroite {
+        margin-left: 10px;
+        float: right;
+      }
+      .cleared {
+        clear: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Alignement horizontal</h2>
+    <!-- L'alignement des textes -->
+    <span class="texte gauche"
+      >GAUCHE => Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+      aliquam distinctio aspernatur quis. Ullam quisquam animi eveniet iste
+      doloremque nemo. Consequuntur incidunt placeat expedita recusandae facere
+      ab illo tenetur aliquid!
+      <br />
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+    </span>
+    <span class="texte droite"
+      >DROITE => Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+      aliquam distinctio aspernatur quis. Ullam quisquam animi eveniet iste
+      doloremque nemo. Consequuntur incidunt placeat expedita recusandae facere
+      ab illo tenetur aliquid! <br /><span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span
+    ></span>
+
+    <span class="texte centre"
+      >CENTRE => Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+      aliquam distinctio aspernatur quis. Ullam quisquam animi eveniet iste
+      doloremque nemo. Consequuntur incidunt placeat expedita recusandae facere
+      ab illo tenetur aliquid! <br /><span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span
+    ></span>
+    <span class="texte justifie"
+      >JUSTIFIE => Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Autem aliquam distinctio aspernatur quis. Ullam quisquam animi eveniet
+      iste doloremque nemo. Consequuntur incidunt placeat expedita recusandae
+      facere ab illo tenetur aliquid! <br /><span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span>
+      <span class="carre"></span
+    ></span>
+    <br />
+    <!-- Les boites flottantes -->
+    <h2>Premier exemple de boite flottante à gauche</h2>
+    <img
+      class="flottegauche"
+      src="https://source.unsplash.com/300x200/?cat"
+      alt="chat"
+    />
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsam
+      explicabo expedita cum ut excepturi aliquam laborum? Blanditiis fugiat
+      corporis dolor amet repellat. Repellat, ullam eius quasi suscipit quod
+      dolorum molestiae doloremque reprehenderit sunt. Tempora corrupti quia
+      deserunt doloremque quasi. Reprehenderit porro autem perferendis debitis
+      error officiis, soluta reiciendis labore assumenda aperiam fugiat eum sed
+      inventore est fuga tempore ad cum impedit corporis magnam quibusdam maxime
+      maiores eius. Adipisci quam maiores odit aliquam, necessitatibus
+      perferendis odio officiis nemo fugit, rem laudantium dolore nulla qui
+      tempore doloribus mollitia dolor eius quibusdam inventore praesentium
+      nostrum suscipit expedita. Exercitationem, porro, ab veniam soluta facere
+      adipisci, nulla voluptate aliquam ipsam dolor rem dolore? Maiores corrupti
+      tempora similique iusto voluptatem earum deleniti blanditiis nisi totam
+      vero, quae vitae, quas nam quibusdam eum delectus laboriosam, mollitia
+      doloribus. Cumque exercitationem corrupti libero dolore perferendis maxime
+      rem nulla facere ea quidem dolorum animi voluptatem, repellat, fuga
+      suscipit veniam consequatur ad delectus hic laborum iusto dicta
+      consequuntur atque! Voluptatum aut odio libero laudantium alias quam
+      veritatis quaerat. Molestias, error pariatur fugiat asperiores officia
+      enim odit eveniet fugit ipsam mollitia laudantium vero deserunt, eos ad
+      animi at voluptatibus quaerat. Exercitationem ipsam ratione atque adipisci
+      suscipit impedit veniam voluptates eveniet rerum provident odio aspernatur
+      odit praesentium laboriosam accusantium cum natus voluptatem cumque,
+      necessitatibus itaque neque nemo voluptatum alias id. Ipsam, voluptatem
+    </p>
+    <h2>Deuxième exemple de boite flottante à droite</h2>
+    <img
+      class="flottedroite"
+      src="https://source.unsplash.com/300x200/?cat"
+      alt="chat"
+    />
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsam
+      explicabo expedita cum ut excepturi aliquam laborum? Blanditiis fugiat
+      corporis dolor amet repellat. Repellat, ullam eius quasi suscipit quod
+      dolorum molestiae doloremque reprehenderit sunt. Tempora corrupti quia
+      deserunt doloremque quasi. Reprehenderit porro autem perferendis debitis
+      error officiis, soluta reiciendis labore assumenda aperiam fugiat eum sed
+      inventore est fuga tempore ad cum impedit corporis magnam quibusdam maxime
+      maiores eius. Adipisci quam maiores odit aliquam, necessitatibus
+      perferendis odio officiis nemo fugit, rem laudantium dolore nulla qui
+      tempore doloribus mollitia dolor eius quibusdam inventore praesentium
+      nostrum suscipit expedita. Exercitationem, porro, ab veniam soluta facere
+      adipisci, nulla voluptate aliquam ipsam dolor rem dolore? Maiores corrupti
+      tempora similique iusto voluptatem earum deleniti blanditiis nisi totam
+      vero, quae vitae, quas nam quibusdam eum delectus laboriosam, mollitia
+      doloribus. Cumque exercitationem corrupti libero dolore perferendis maxime
+      rem nulla facere ea quidem dolorum animi voluptatem, repellat, fuga
+      suscipit veniam consequatur ad delectus hic laborum iusto dicta
+      consequuntur atque! Voluptatum aut odio libero laudantium alias quam
+      veritatis quaerat. Molestias, error pariatur fugiat asperiores officia
+      enim odit eveniet fugit ipsam mollitia laudantium vero deserunt, eos ad
+      animi at voluptatibus quaerat. Exercitationem ipsam ratione atque adipisci
+      suscipit impedit veniam voluptates eveniet rerum provident odio aspernatur
+      odit praesentium laboriosam accusantium cum natus voluptatem cumque,
+      necessitatibus itaque neque nemo voluptatum alias id. Ipsam, voluptatem
+    </p>
+    <h2>Troisième exemple avec une boite à droite et un élément dégagé</h2>
+    <img
+      class="flottedroite"
+      src="https://source.unsplash.com/300x200/?cat"
+      alt="chat"
+    />
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsam
+      explicabo expedita cum ut excepturi aliquam laborum? Blanditiis fugiat
+      corporis dolor amet repellat. Repellat, ullam eius quasi suscipit quod
+      dolorum molestiae doloremque reprehenderit sunt. Tempora corrupti quia
+      deserunt doloremque quasi. Reprehenderit porro autem perferendis debitis
+    </p>
+    <p class="cleared">
+      >corrupti libero dolore perferendis maxime rem nulla facere ea quidem
+      dolorum animi voluptatem, repellat, fuga suscipit veniam consequatur ad
+      delectus hic laborum iusto dicta consequuntur atque! Voluptatum aut odio
+      libero laudantium alias quam veritatis quaerat. Molestias, error pariatur
+      fugiat asperiores officia enim odit eveniet fugit ipsam mollitia
+      laudantium vero deserunt, eos ad animi at voluptatibus quaerat.
+      Exercitationem ipsam ratione atque adipisci suscipit impedit veniam
+      voluptates eveniet rerum provident odio aspernatur odit praesentium
+      laboriosam accusantium cum natus voluptatem cumque, necessitatibus itaque
+      neque nemo voluptatum alias id. Ipsam, voluptatem error officiis, soluta
+      reiciendis labore assumenda aperiam fugiat eum sed inventore est fuga
+      tempore ad cum impedit corporis magnam quibusdam maxime maiores eius.
+      Adipisci quam maiores odit aliquam, necessitatibus perferendis odio
+      officiis nemo fugit, rem laudantium dolore nulla qui tempore doloribus
+      mollitia dolor eius quibusdam inventore praesentium nostrum suscipit
+      expedita. Exercitationem, porro, ab veniam soluta facere adipisci, nulla
+      voluptate aliquam ipsam dolor rem dolore? Maiores corrupti tempora
+      similique iusto voluptatem earum deleniti blanditiis nisi totam vero, quae
+      vitae, quas nam quibusdam eum delectus laboriosam, mollitia doloribus.
+      Cumque exercitationem
+    </p>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sélectors avancés</title>
+  </head>
+  <style>
+    .mydiv p {
+      color: red;
+    }
+
+    .mydiv > p {
+      color: blue;
+    }
+
+    div + p {
+      color: purple;
+    }
+
+    p[id] {
+      color: orange;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      border: 1px solid green;
+    }
+
+    ::placeholder {
+      color: brown;
+    }
+    ::selection {
+      background: pink;
+      color: white;
+    }
+
+    :root {
+      font-size: 20px;
+    }
+  </style>
+  <body>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <div class="mydiv">
+      <p>Lorem ipsum dolor sit amet.</p>
+      <div>
+        <span>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </span>
+      </div>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p id="test-1">Lorem ipsum dolor sit amet.</p>
+    <p id="test-2">Lorem ipsum dolor sit amet.</p>
+    <input type="text" placeholder="name" /> <br />
+    <input type="number" placeholder="age" /> <br />
+    <input type="email" placeholder="email" /> <br />
+  </body>
+</html>

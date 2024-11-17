@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Cacher un élément, z-index et overflow</title>
+    <style>
+      .boite {
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        margin: 2px;
+        background: red;
+        margin: 20px 0;
+      }
+      .cache {
+        visibility: hidden;
+      }
+      .cache-pas-despace-occupe {
+        display: none;
+      }
+      .boite1 {
+        position: relative;
+        z-index: 1;
+        background: lightgray;
+        border: dashed;
+        height: 100px;
+      }
+      .boite2 {
+        position: absolute;
+        z-index: 3;
+        background: gold;
+        width: 80%;
+        height: 50px;
+        left: 10%;
+        top: 120px;
+      }
+      .boite3 {
+        position: absolute;
+        z-index: 2;
+        background: lightgreen;
+        width: 20%;
+        height: 150px;
+        left: 65%;
+        top: 8%;
+        opacity: 0.9;
+      }
+      .boite4 {
+        display: inline-block;
+        margin: 30px 0;
+        height: 200px;
+        width: 200px;
+        background: lightgray;
+        border: dashed;
+      }
+      .hidden {
+        overflow: hidden;
+      }
+      .scroll {
+        overflow: scroll;
+      }
+      .auto {
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Cacher un élément -->
+    <div class="boite cache"></div>
+    <div class="boite cache-pas-despace-occupe"></div>
+    <div class="boite"></div>
+    <br />
+
+    <!-- Z-index -->
+    <div class="boite1">Boîte 1</div>
+    <span class="boite2">Boîte 2</span>
+    <span class="boite3">Boîte 3</span>
+    <br />
+
+    <!-- overflow -->
+    <div class="boite4">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi porro
+      temporibus eos tempore nemo facere, accusantium sit officia, voluptas
+      delectus corrupti maxime iusto neque aliquid voluptatum mollitia id
+      asperiores suscipit nam! Libero qui facilis cupiditate, aut quia incidunt
+      totam ut nesciunt, quasi consequatur at praesentium alias natus corrupti,
+      magni soluta sed aliquid numquam nulla mollitia deserunt? Impedit iusto,
+      nam nemo quod recusandae qui error quas esse sint cumque quaerat
+      cupiditate quibusdam totam? Placeat aliquid assumenda, animi blanditiis,
+      eligendi neque dolorem incidunt alias optio mollitia beatae a, autem
+      impedit voluptates sequi quo aliquam. Itaque quibusdam, perferendis
+      quisquam quia ratione magnam saepe!
+    </div>
+    <div class="boite4 hidden">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi porro
+      temporibus eos tempore nemo facere, accusantium sit officia, voluptas
+      delectus corrupti maxime iusto neque aliquid voluptatum mollitia id
+      asperiores suscipit nam! Libero qui facilis cupiditate, aut quia incidunt
+      totam ut nesciunt, quasi consequatur at praesentium alias natus corrupti,
+      magni soluta sed aliquid numquam nulla mollitia deserunt? Impedit iusto,
+      nam nemo quod recusandae qui error quas esse sint cumque quaerat
+      cupiditate quibusdam totam? Placeat aliquid assumenda, animi blanditiis,
+      eligendi neque dolorem incidunt alias optio mollitia beatae a, autem
+      impedit voluptates sequi quo aliquam. Itaque quibusdam, perferendis
+      quisquam quia ratione magnam saepe!
+    </div>
+    <div class="boite4 scroll">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi porro
+      temporibus eos tempore nemo facere, accusantium sit officia, voluptas
+      delectus corrupti maxime iusto neque aliquid voluptatum mollitia id
+      asperiores suscipit nam! Libero qui facilis cupiditate, aut quia incidunt
+      totam ut nesciunt, quasi consequatur at praesentium alias natus corrupti,
+      magni soluta sed aliquid numquam nulla mollitia deserunt? Impedit iusto,
+      nam nemo quod recusandae qui error quas esse sint cumque quaerat
+      cupiditate quibusdam totam? Placeat aliquid assumenda, animi blanditiis,
+      eligendi neque dolorem incidunt alias optio mollitia beatae a, autem
+      impedit voluptates sequi quo aliquam. Itaque quibusdam, perferendis
+      quisquam quia ratione magnam saepe!
+    </div>
+    <div class="boite4 auto">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi porro
+      temporibus eos tempore nemo facere, accusantium sit officia, voluptas
+      delectus corrupti maxime iusto neque aliquid voluptatum mollitia id
+      asperiores suscipit nam! Libero qui facilis cupiditate, aut quia incidunt
+      totam ut nesciunt, quasi consequatur at praesentium alias natus corrupti,
+      magni soluta sed aliquid numquam nulla mollitia deserunt? Impedit iusto,
+      nam nemo quod recusandae qui error quas esse sint cumque quaerat
+      cupiditate quibusdam totam? Placeat aliquid assumenda, animi blanditiis,
+      eligendi neque dolorem incidunt alias optio mollitia beatae a, autem
+      impedit voluptates sequi quo aliquam. Itaque quibusdam, perferendis
+      quisquam quia ratione magnam saepe!
+    </div>
+  </body>
+</html>

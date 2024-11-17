@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>La disposition des éléments</title>
+    <style>
+      .boite {
+        border: 1px black solid;
+      }
+      .enligne {
+        display: inline;
+      }
+      .debloc {
+        display: block;
+      }
+      .inlineblock {
+        display: inline-block;
+        /* La marge et le remplissage poussent les autres éléments */
+        margin: 20px;
+        padding: 20px;
+        /* La largeur et la hauteur sont respectées */
+        width: 50px;
+        height: 50px;
+        background-color: lightblue;
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Le paraprahe prend toute la largeur du parent mais comme il est vide il n'a pas de hauteur. -->
+    <p class="boite"></p>
+    <!-- Le paraprahe prend toute la hauteur de son contenu. -->
+    <p class="boite">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta rerum ut
+      porro optio sit temporibus neque expedita nesciunt minus id quaerat hic
+      voluptatibus laudantium perferendis voluptates, architecto tenetur sequi!
+      Quisquam.
+    </p>
+    <!-- Les span prennent la largeur et la hauteur de leur contenu -->
+    <span class="boite"></span>
+    <br />
+    <span class="boite">erferfez</span>
+    <br />
+    <br />
+    <!-- Changer la disposition de div pour les mettre en ligne-->
+    <div class="enligne">Lorem ipsum dolor sit amet.</div>
+    <div class="enligne">Lorem ipsum dolor sit amet.</div>
+    <!-- Changer la disposition de span pour les mettre en bloc-->
+    <span class="debloc">Span disposé en bloc.</span>
+    <span class="debloc">Span disposé en bloc.</span>
+    <br />
+    <br />
+    <!-- La disposition inline-block prend un peu des deux dispositions -->
+    <p>
+      Lorem ipsum dolor sit amet consectetur
+      <span class="inlineblock">elit. Ea impedit</span>
+      officia voluptatem atque ipsa! Nulla saepe perferendis repudiandae at
+      blanditiis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+      autem quae minima possimus commodi est, dicta veniam unde obcaecati,
+      aspernatur excepturi molestiae voluptates et nisi velit eius, sunt modi!
+      Sequi.
+    </p>
+  </body>
+</html>

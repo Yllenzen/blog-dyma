@@ -1,0 +1,153 @@
+default:
+  image: node:20-alpine
+
+variables:
+  SERVER_IP: 141.94.245.67
+  SERVER_USER: root
+
+stages:
+  - check
+  - build
+  - test
+  - deploy
+
+.cache_dependencies_backend: &dependencies_backend
+  cache:
+    key:
+      files:
+        - server/package-lock.json
+    paths:
+      - server/node_modules
+      - server/.npm
+
+.cache_dependencies_frontend: &dependencies_frontend
+  cache:
+    key:
+      files:
+        - client/package-lock.json
+    paths:
+      - client/node_modules
+      - client/.npm
+
+.before_script_template_backend: &before_script_definition_backend
+  before_script:
+    - cd server
+    - echo "Install dependencies in server directory"
+    - npm ci --cache .npm --prefer-offline
+
+.before_script_template_frontend: &before_script_definition_frontend
+  before_script:
+    - cd client
+    - echo "Install dependencies in client directory"
+    - npm ci --cache .npm --prefer-offline
+
+lint:frontend:
+  stage: check
+  extends:
+    - .before_script_template_frontend
+    - .cache_dependencies_frontend
+  cache:
+    policy: pull
+  script: npm run lint
+
+security:frontend:
+  <<:
+    - *dependencies_frontend
+    - *before_script_definition_frontend
+  stage: check
+  script: npm audit
+
+build:frontend:
+  stage: build
+  extends:
+    - .before_script_template_frontend
+    - .cache_dependencies_frontend
+  cache:
+    policy: pull
+  script: npm run build
+  artifacts:
+    when: on_success
+    expire_in: 1 day
+    paths:
+      - client/dist
+
+test:e2e:
+  image: cypress/browsers
+  stage: test
+  dependencies: []
+  cache:
+    key: e2e-$CI_COMMIT_REF_SLUG
+    paths:
+      - client/node_modules
+      - client/.npm
+      - server/node_modules
+      - server/.npm
+    policy: pull
+  before_script:
+    - cd server
+    - npm ci --cache .npm --prefer-offline
+    - node index.js &
+    - cd ../client
+    - npm ci --cache .npm --prefer-offline
+    - npm run build:e2e
+  script:
+    - npm run test:e2e
+    - npx nyc report --reporter=text-summary
+  coverage: '/Statements\s+:\s(\d+.?\d+)%/'
+  parallel:
+    matrix:
+      - BROWSER: ['chrome', 'firefox', 'edge']
+
+lint:backend:
+  extends:
+    - .before_script_template_backend
+    - .cache_dependencies_backend
+  stage: check
+  cache:
+    policy: pull
+  script: npm run lint
+
+security:backend:
+  <<:
+    - *dependencies_backend
+    - *before_script_definition_backend
+  stage: check
+  script: npm audit
+
+test:backend:
+  extends:
+    - .before_script_template_backend
+    - .cache_dependencies_backend
+  image: node:lts-bullseye
+  stage: test
+  cache:
+    policy: pull
+  script: npm run test:ci
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    when: always
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: server/coverage/cobertura-coverage.xml
+
+deploy:
+  stage: deploy
+  image: node:lts-bullseye
+  environment:
+    name: production
+  inherit:
+    default: false
+  before_script:
+    - eval $(ssh-agent -s)
+    - echo $SSH_KEY_VPS | base64 -d | ssh-add -
+  script:
+    - mkdir -p ~/.ssh
+    - touch ~/.ssh/known_hosts
+    - ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
+    - scp -r ./server $SERVER_USER@$SERVER_IP:/var/www
+    - scp -r ./client/dist $SERVER_USER@$SERVER_IP:/var/www
+    - ssh $SERVER_USER@$SERVER_IP "cd /var/www/server && npm install --omit=dev"
+    - ssh $SERVER_USER@$SERVER_IP "cd /var/www/server && pm2 startOrRestart ecosystem.config.js --env production && pm2 save"
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH'

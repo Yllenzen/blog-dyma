@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Before & After</title>
+    <style>
+      .required::after {
+        content: "*";
+        color: teal;
+        font-size: 0.5rem;
+      }
+
+      .required::before {
+        content: "- ";
+        color: red;
+      }
+
+      .quote {
+        font-style: italic;
+        color: #333;
+      }
+
+      .quote::before {
+        content: "\201C";
+      }
+
+      .quote::after {
+        content: "\201C";
+      }
+    </style>
+  </head>
+  <body>
+    <label class="required">Name</label>
+    <input type="text" />
+    <p class="quote">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. A, vero!
+    </p>
+
+    <p class="quote">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus
+      neque magni molestiae ipsum quas facere sint soluta explicabo tenetur a!
+    </p>
+  </body>
+</html>

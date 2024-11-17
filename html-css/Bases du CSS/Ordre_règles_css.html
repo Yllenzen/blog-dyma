@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ordre d'application des règles</title>
+    <style>
+      h1 {
+        color: red;
+      }
+      h1 {
+        color: blue;
+      }
+
+      .jegagne {
+        color: green;
+      }
+      p {
+        color: purple;
+      }
+
+      #millepoints {
+        color: red;
+      }
+
+      .jegagnetoujours {
+        color: orange !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!--  La cascade -->
+    <h1>Je suis bleu</h1>
+
+    <br />
+
+    <!-- Spécificité -->
+    <p class="jegagne">La spécificité gagne sur l'ordre !</p>
+
+    <!-- Important -->
+    <p id="millepoints" class="jegagnetoujours">
+      !important gagne, même contre 1000 points !
+    </p>
+
+    <!-- Style en ligne -->
+    <p id="millepoints" style="color: paleturquoise">
+      Le style en ligne presque gagne toujours...
+    </p>
+    <p class="jegagnetoujours" style="color: paleturquoise">
+      ...sauf face à l'importance.
+    </p>
+  </body>
+</html>

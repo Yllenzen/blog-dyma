@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variables</title>
+    <style>
+      :root {
+        --red: #e74c3c;
+        --box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.3);
+        --gray: purple;
+      }
+
+      .gray {
+        color: var(--gray);
+      }
+
+      .gray-block {
+        --gray-block-red:var(--red)
+        --red: blue;
+        box-shadow: var(--box-shadow);
+      }
+
+      .gray-block-text {
+        color: var(--red, teal);
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
+      voluptates!
+    </p>
+    <div class="gray-block">
+      <p class="gray-block-text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, a.
+      </p>
+    </div>
+    <div class="gray">
+      <p class="gray-text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, a.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolore
+        nesciunt, rem itaque molestiae quia deserunt sapiente maiores earum
+        corrupti magni, quis blanditiis maxime vel neque ad. Voluptatem, in
+        quisquam?
+      </p>
+    </div>
+  </body>
+</html>
