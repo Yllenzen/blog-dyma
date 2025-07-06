@@ -1,0 +1,11 @@
+#!/bin/bash
+
+HOME="/home/yllenzen"
+USER="yllenzen"
+WHAT="$HOME/Images"
+FILENAME="backup_$(date | sed -e 's/[.: ]/_/g' -e 's/__/_/g' ).tar.gz"
+FILE="$HOME/Documents/Dyma/Linux_Bash/scripts/backup/$FILENAME"
+LOGFILE="$HOME/Documents/Dyma/Linux_Bash/scripts/backup/backup.log"
+
+tar -czf $FILE $WHAT
+echo "Backup of Images done : $FILENAME" >> $LOGFILE

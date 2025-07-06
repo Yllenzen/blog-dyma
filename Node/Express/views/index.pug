@@ -1,0 +1,47 @@
+doctype html
+html(lang="fr")
+    head
+        title Document
+    body 
+        h1(style={color: 'blue'}) Hello World 
+        div(class=['test1', 'test2', 'test3'] id='id123')
+            p(style={color: 'white', background: 'purple'}) Ma Biblilothèque
+            .container
+            .content
+                p #{ name} 
+                //- p= name
+
+                if authenticated 
+                    p Je suis connecté
+                else 
+                    p Je ne suis pas connecté
+
+                case Livres 
+                    when 0
+                        span Vous n'avez pas de livres 
+                    when 1
+                        span Vous avez 1 livre 
+                    default 
+                        span Vous avez #{ Livres } livres 
+
+                each book in books 
+                    .book 
+                    h4= book.title 
+                    p #{ book.content }
+                
+                p.test.
+                        Livres lus <br/>
+                        Livres à lire <br/>
+                        Livre à acheter <br/>
+                        Livre en cours de livraison <br/>
+        style.
+          .test {
+            font-size: 20px
+          }
+        script. 
+           console.log('Hello')
+
+extends layout.pug 
+
+block content
+    h1 Hello 

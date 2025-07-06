@@ -1,0 +1,6 @@
+<h1>Hello, {{ title }}</h1>
+<ul>
+  @for(user of users(); track $index) {
+  <li>{{ user.name }}</li>
+  }
+</ul>

@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/database/database.php';
-$authDB = require_once __DIR__ . '/database/security.php';
+require_once './database/database.php';
+$authDB = require_once './database/security.php';
 
 const ERROR_REQUIRED = 'Veuillez renseigner ce champ';
 const ERROR_PASSWORD_MISMATCH = 'Le mot de passe n\'est pas valide';
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (!$password) {
     $errors['password'] = ERROR_REQUIRED;
   }
-  if (empty(array_filter($errors, fn($e) => $e !== ''))) {
+  if (empty(array_filter($errors, fn ($e) => $e !== ''))) {
     $user = $authDB->getUserFromEmail($email);
     if (!$user) {
       $errors['email'] = ERROR_EMAIL_UNKOWN;

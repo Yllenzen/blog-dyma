@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Mon Titre</title>
+  </head>
+  <body>
+    <img src="/images/image.jpg" alt="Logo">
+    <h1>Hello <%- name %> !!</h1>
+    <% if (authenticated) {%>
+    <h1>Je suis connecté(e)</h1>
+    <% } else { %>
+    <h1>Je ne suis pas connecté(e)</h1>
+    <% } %>
+    <br />
+    <%- include("topbar") -%> <% books.forEach(function(book){%>
+    <div class="book">
+      <h1><%= book.title %></h1>
+      <p><%= book.content %></p>
+    </div>
+    <% }) %>
+  </body>
+</html>
